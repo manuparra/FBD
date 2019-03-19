@@ -15,6 +15,8 @@ Para concretar los pasos para hacer el paso de Modelo de E/R (diagrama) a paso a
 
 El procedimiento general para pasar a tablas un diagrama de un Modelo de E/R es el siguiente:
 
+### Traspaso de Entidades Fuertes (algoritmo)
+
 1.- Vemos cuales son las Entidades Fuertes del Modelo E/R:
  - a) Anotamos cada una de las **entidades fuertes**.
  - b) Incluimos todos sus atributos.
@@ -34,6 +36,9 @@ Profesores(NRP,...);
 Departamentos(Cod_dep,...);
 ```
 
+![Diagrama02](imagenes/diagrama02.png)
+
+### Traspaso de Entidades Débiles (algoritmo)
 
 2.- Vemos cuales son las de entidades débiles del diagrama de E/R:
  - a) Anotamos todas  las entidades débiles.
@@ -46,6 +51,10 @@ Asignaturas(Cod_asig,...)
 Grupos(Cod_asig, Cod_grupo, Tipo,...)
 ```
 
+![Diagrama03](imagenes/diagrama03.png)
+
+
+### Traspaso de Relaciones (algoritmo)
 
 3.- Tradución del conjunto de relaciones del modelo E/R:
  - a) Anotamos todas las relaciones que unen a las entidades.
@@ -60,6 +69,10 @@ A tener en cuenta:
  - **Relaciones uno a uno**:
 	- Tiene al menos dos claves candidatas (de las relaciones involucradas). Pero hay que seleccionar una como clave primaria y otra como clave candidata.
 
+
+![Diagrama04](imagenes/diagrama04.png)
+
+![Diagrama05](imagenes/diagrama05.png)
 
 
 
