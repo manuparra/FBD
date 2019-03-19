@@ -74,7 +74,7 @@ Grupos(Cod_asig, Cod_grupo, Tipo,...)
  - b) Incluimos los atributos propios de la relación.
  - c) Añadimos los atributos de las claves primarias de las entidades que están conectadas.
 	
-A tener en cuenta:
+A tener en cuenta (mucho cuidado):
  - **Si la relación es muchos a muchos**:
 	- La clave primaria está formada por todos los atributos de las Entidades involucradas
  - **Si la relación es mucho a uno**:
@@ -83,7 +83,7 @@ A tener en cuenta:
 	- Tiene al menos dos claves candidatas (de las relaciones involucradas). Pero hay que seleccionar una como clave primaria y otra como clave candidata.
 
 
-
+![Diagrama05](imagenes/diagrama06.png)
 
 ![Diagrama05](imagenes/diagrama05.png)
 
