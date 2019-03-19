@@ -54,11 +54,11 @@ Grupos(Cod_asig, Cod_grupo, Tipo,...)
 	
 A tener en cuenta:
  - **Si la relación es muchos a muchos**:
-  - La clave primaria está formada por todos los atributos de las Entidades involucradas
+	- La clave primaria está formada por todos los atributos de las Entidades involucradas
  - **Si la relación es mucho a uno**:
-  - La clave primaria está formada por todos los atributos de las Entidades con cardinalidad de tipo *muchos*.
+	- La clave primaria está formada por todos los atributos de las Entidades con cardinalidad de tipo *muchos*.
  - **Relaciones uno a uno**:
-  - Tiene al menos dos claves candidatas (de las relaciones involucradas). Pero hay que seleccionar una como clave primaria y otra como clave candidata.
+	- Tiene al menos dos claves candidatas (de las relaciones involucradas). Pero hay que seleccionar una como clave primaria y otra como clave candidata.
 
 
 
