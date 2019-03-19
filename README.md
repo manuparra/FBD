@@ -1,10 +1,19 @@
 # Fundamentos de Bases de Datos
 
+
+
 Documentación y Material ADICIONAL de la asignatura de Fundamentos de Bases de Datos. En este repositorio se incluirá toda la információn EXTRA de la asignatura que ayudará a su estudio y trabajo tanto para la parte de Teoría como para la parte de Prácticas.
 
 Grado en Ingeniería Informática. Universidad de Granada.
 
 Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr.es)
+
+<HR>
+
+* [Traspaso de Modelo E/R a Tablas](#traspaso-de-modelo-e-r-a-tablas)
+ + [Traspaso de Entidades Fuertes (algoritmo)](#traspaso-de-entidades-fuertes--algoritmo-)
+ + [Traspaso de Entidades Débiles (algoritmo)](#traspaso-de-entidades-d-biles--algoritmo-)
+ + [Traspaso de Relaciones (algoritmo)](#traspaso-de-relaciones--algoritmo-)
 
 
 ## Traspaso de Modelo E/R a Tablas
