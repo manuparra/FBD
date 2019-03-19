@@ -12,23 +12,22 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
 	Tabla de Contenido
 <HR>	
 
-- [Fundamentos de Bases de Datos](#fundamentos-de-bases-de-datos)
-  * [Material de Teoría](#material-de-teor-a)
-    + [Tema 3 Modelo de Datos](#tema-3-modelo-de-datos)
-    + [Proceso de anális y diseño de la Base de Datos](#proceso-de-an-lis-y-dise-o-de-la-base-de-datos)
-    + [Transformación del modelo lógico de la base de datos](#transformaci-n-del-modelo-l-gico-de-la-base-de-datos)
-  * [Modelos basados en Registros](#modelos-basados-en-registros)
-  * [Modelo Jerárquico](#modelo-jer-rquico)
+- [Material de Teoría](#material-de-teor-a)
+  * [Tema 3 Modelo de Datos](#tema-3-modelo-de-datos)
+  	+ [Proceso de análisis y diseño de la Base de Datos](#proceso-de-an-lis-y-dise-o-de-la-base-de-datos)
+  	+ [Transformación del modelo lógico de la base de datos](#transformaci-n-del-modelo-l-gico-de-la-base-de-datos)
+  	+ [Modelos basados en Registros](#modelos-basados-en-registros)
+  	+ [Modelo Jerárquico](#modelo-jer-rquico)
+- [Prácticas](#pr-cticas)
   * [Traspaso de Modelo E/R a Tablas](#traspaso-de-modelo-e-r-a-tablas)
-    + [Traspaso de Entidades Fuertes (algoritmo)](#traspaso-de-entidades-fuertes--algoritmo-)
-    + [Traspaso de Entidades Débiles (algoritmo)](#traspaso-de-entidades-d-biles--algoritmo-)
-    + [Traspaso de Relaciones (algoritmo)](#traspaso-de-relaciones--algoritmo-)
+    + [Traspaso de Entidades Fuertes](#traspaso-de-entidades-fuertes)
+    + [Traspaso de Entidades Débiles](#traspaso-de-entidades-d-biles)
+    + [Traspaso de Relaciones](#traspaso-de-relaciones)
     + [Traspaso de relaciones de Herencia](#traspaso-de-relaciones-de-herencia)
 
+# Material de Teoría
 
-## Material de Teoría
-
-### Tema 3 Modelo de Datos
+## Tema 3 Modelo de Datos
 
 Cuando necesitamos desarrollar una aplicación, un software, o un sistema, lo más probable es que requiera de una Base de Datos. Para ello, antes de empezar directamente con la implementación en un SGBD, es necesario realizar un estudio del problema al que nos enfrentamos.
 
@@ -52,13 +51,13 @@ El modelado de datos, debe constar de:
 - Notación para describir reglas de integridad.
 
 
-### Proceso de anális y diseño de la Base de Datos
+## Proceso de anális y diseño de la Base de Datos
 
 El proceso completo de implementación (desde el planteamiento del problema, la creación del modelado E/R hasta el trabajo en la Base de Datos ) de una Base de Datos sigue el siguiente esquema de operaciones:
 
 ![Diagrama01](imagenes/diagrama07.png)
 
-### Transformación del modelo lógico de la base de datos
+## Transformación del modelo lógico de la base de datos
 
 Traducimos el Modelo E/R a una estructura implementable, como por ejemplo:
 
@@ -111,6 +110,9 @@ El modelo jerarquico gestiona bien las relaciones uno-muchos, uno a uno, pero no
 - Contiene mucha redundancia, hay datos duplicados. Por lo que si modificamos un registro hay que modificarlo en todos los lugares donde aparece para que no se pierda la integridad de los datos.
 
 
+
+# Prácticas 
+
 ## Traspaso de Modelo E/R a Tablas
 
 Para concretar los pasos para hacer el paso de Modelo de E/R (diagrama) a paso a tablas, vamos a trabajar con el diagrama siguiente:
@@ -119,7 +121,7 @@ Para concretar los pasos para hacer el paso de Modelo de E/R (diagrama) a paso a
 
 El procedimiento general para pasar a tablas un diagrama de un Modelo de E/R es el siguiente:
 
-### Traspaso de Entidades Fuertes (algoritmo)
+### Traspaso de Entidades Fuertes
 
 1.- Vemos cuales son las Entidades Fuertes del Modelo E/R:
  - a) Anotamos cada una de las **entidades fuertes**.
@@ -142,7 +144,7 @@ Departamentos(Cod_dep,...);
 
 ![Diagrama02](imagenes/diagrama02.png)
 
-### Traspaso de Entidades Débiles (algoritmo)
+### Traspaso de Entidades Débiles
 
 2.- Vemos cuales son las de entidades débiles del diagrama de E/R:
  - a) Anotamos todas  las entidades débiles.
@@ -160,7 +162,7 @@ Grupos(Cod_asig, Cod_grupo, Tipo,...)
 ![Diagrama04](imagenes/diagrama04.png)
 
 
-### Traspaso de Relaciones (algoritmo)
+### Traspaso de Relaciones
 
 3.- Tradución del conjunto de relaciones del modelo E/R:
  - a) Anotamos todas las relaciones que unen a las entidades.
