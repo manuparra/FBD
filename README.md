@@ -13,10 +13,17 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
 <HR>	
 
 - [Fundamentos de Bases de Datos](#fundamentos-de-bases-de-datos)
+  * [Material de Teoría](#material-de-teor-a)
+    + [Tema 3 Modelo de Datos](#tema-3-modelo-de-datos)
+    + [Proceso de anális y diseño de la Base de Datos](#proceso-de-an-lis-y-dise-o-de-la-base-de-datos)
+    + [Transformación del modelo lógico de la base de datos](#transformaci-n-del-modelo-l-gico-de-la-base-de-datos)
+  * [Modelos basados en Registros](#modelos-basados-en-registros)
+  * [Modelo Jerárquico](#modelo-jer-rquico)
   * [Traspaso de Modelo E/R a Tablas](#traspaso-de-modelo-e-r-a-tablas)
     + [Traspaso de Entidades Fuertes (algoritmo)](#traspaso-de-entidades-fuertes--algoritmo-)
     + [Traspaso de Entidades Débiles (algoritmo)](#traspaso-de-entidades-d-biles--algoritmo-)
     + [Traspaso de Relaciones (algoritmo)](#traspaso-de-relaciones--algoritmo-)
+    + [Traspaso de relaciones de Herencia](#traspaso-de-relaciones-de-herencia)
 
 
 ## Material de Teoría
