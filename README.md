@@ -9,7 +9,10 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
 
 ## Traspaso de Modelo E/R a Tablas
 
-Ejemplo Diagrama E/R:
+Para concretar los pasos para hacer el paso de Modelo de E/R (diagrama) a paso a tablas, vamos a trabajar con el diagrama siguiente:
+
+![Diagrama01](images/diagrama01.png)
+
 
 El procedimiento general para pasar a tablas un diagrama de un Modelo de E/R es el siguiente:
 
