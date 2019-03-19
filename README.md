@@ -16,10 +16,9 @@ Para concretar los pasos para hacer el paso de Modelo de E/R (diagrama) a paso a
 El procedimiento general para pasar a tablas un diagrama de un Modelo de E/R es el siguiente:
 
 1.- Vemos cuales son las Entidades Fuertes del Modelo E/R:
-
-	- a) Extraer entidades fuertes
-    - b) Incluir todos sus atributos
-    - c) Marcar el atributo/s que son Clave Primaria
+ - a) Extraer entidades fuertes
+ - b) Incluir todos sus atributos
+ - c) Marcar el atributo/s que son Clave Primaria
 
 Por tanto para le diagrama las Entidades Fuertes con los atributos y claves primarias son las siguientes: 
 
