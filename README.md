@@ -9,6 +9,8 @@ Grado en Ingeniería Informática. Universidad de Granada.
 Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr.es)
 
 <HR>
+	Tabla de Contenido
+<HR>	
 
 - [Fundamentos de Bases de Datos](#fundamentos-de-bases-de-datos)
   * [Traspaso de Modelo E/R a Tablas](#traspaso-de-modelo-e-r-a-tablas)
@@ -62,6 +64,8 @@ Grupos(Cod_asig, Cod_grupo, Tipo,...)
 
 ![Diagrama03](imagenes/diagrama03.png)
 
+![Diagrama04](imagenes/diagrama04.png)
+
 
 ### Traspaso de Relaciones (algoritmo)
 
@@ -79,7 +83,7 @@ A tener en cuenta:
 	- Tiene al menos dos claves candidatas (de las relaciones involucradas). Pero hay que seleccionar una como clave primaria y otra como clave candidata.
 
 
-![Diagrama04](imagenes/diagrama04.png)
+
 
 ![Diagrama05](imagenes/diagrama05.png)
 
