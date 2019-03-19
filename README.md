@@ -22,41 +22,43 @@ El procedimiento general para pasar a tablas un diagrama de un Modelo de E/R es 
 
 Por tanto para le diagrama las Entidades Fuertes con los atributos y claves primarias son las siguientes: 
 
+```
+Asignaturas(Cod_asig,...);  
 
-- Asignaturas(__Cod_asig__,...);  
+Aulas(Cod_aula,...);
 
-- Aulas(__Cod_aula__,...);
+Alumnos(DNI,...);
 
-- Alumnos(__DNI__,...);
+Profesores(NRP,...);
 
-- Profesores(__NRP__,...);
-
-- Departamentos(__Cod_dep__,...);
-
+Departamentos(Cod_dep,...);
+```
 
 
-2.- Traduccion del conjunto de entidades débiles del diagrama de E/R:
-	a) Extraer las entidades débiles
-	b) Marcar los atributos que son Clave Primaria de la entidad debil
-	c) Buscar las Entidades Fuertes con las que están unidas		
-		c1) Marcar los atributos que son Clave externa
-	d) Incluir la clave externa en la lista de atributos de la entidad debil anterior
-
+2.- Vemos cuales son las de entidades débiles del diagrama de E/R:
+ - a) Anotamos todas  las entidades débiles.
+ - b) Incluimos los atributos que son Clave Primaria de la entidad debil.
+ - c) Buscamos en las Entidades Fuertes con las que está unida la relación:
+ - c1) Anotamos  los atributos que son Clave Primara en las Entidades Fuertes conectadas.
+ 
+```
 Asignaturas(Cod_asig,...)
 Grupos(Cod_asig, Cod_grupo, Tipo,...)
+```
 
-3.- Tradución del conjunto de relaciones
-	a) Extraer las relaciones que unen a las entidades
-	b) Añadir los atributos propios de la relación
-	c) Añadir los atributos de las claves primarias de las entidades que están conectadas
+
+3.- Tradución del conjunto de relaciones del modelo E/R:
+ - a) Anotamos todas las relaciones que unen a las entidades.
+ - b) Incluimos los atributos propios de la relación.
+ - c) Añadimos los atributos de las claves primarias de las entidades que están conectadas.
 	
-	A tener en cuenta:
-	- Si la relación es muchos a muchos:
-		La clave primaria está formada por todos los atributos de las Entidades involucradas
-	- Si la relación es mucho a uno:
-		La clave primaria está formada por todos los atributos de las Entidades con cardinalidad de tipo mucho.
-	- Relaciones uno a uno:
-		Tiene al menos dos claves candidatas (de las relaciones involucradas). Pero hay que seleccionar una como clave primaria y otra como clave candidata.
+A tener en cuenta:
+ - **Si la relación es muchos a muchos**:
+  - La clave primaria está formada por todos los atributos de las Entidades involucradas
+ - **Si la relación es mucho a uno**:
+  - La clave primaria está formada por todos los atributos de las Entidades con cardinalidad de tipo *muchos*.
+ - **Relaciones uno a uno**:
+  - Tiene al menos dos claves candidatas (de las relaciones involucradas). Pero hay que seleccionar una como clave primaria y otra como clave candidata.
 
 
 
