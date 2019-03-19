@@ -11,21 +11,22 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
 
 Para concretar los pasos para hacer el paso de Modelo de E/R (diagrama) a paso a tablas, vamos a trabajar con el diagrama siguiente:
 
-![Diagrama01](images/diagrama01.png)
-
+![Diagrama01](imagenes/diagrama01.png)
 
 El procedimiento general para pasar a tablas un diagrama de un Modelo de E/R es el siguiente:
 
-1.- Traducción del conjunto de Entidades Fuertes del Modelo E/R:
-    a) Extraer entidades fuertes
-    b) Incluir todos sus atributos
-    c) Marcar el atributo/s que son Clave Primaria
+1.- Vemos cuales son las Entidades Fuertes del Modelo E/R:
+	- a) Extraer entidades fuertes
+    - b) Incluir todos sus atributos
+    - c) Marcar el atributo/s que son Clave Primaria
 
-Asignaturas(Cod_asig,...);
+```
+Asignaturas(Cod_asig,...);  
 Aulas(Cod_aula,...);
 Alumnos(DNI,...);
 Profesores(NRP,...);
 Departamentos(Cod_dep,...);
+```
 
 2.- Traduccion del conjunto de entidades débiles del diagrama de E/R:
 	a) Extraer las entidades débiles
