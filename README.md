@@ -22,18 +22,18 @@ El procedimiento general para pasar a tablas un diagrama de un Modelo de E/R es 
 
 Por tanto para le diagrama las Entidades Fuertes con los atributos y claves primarias son las siguientes: 
 
-```
-Asignaturas(__Cod_asig__,...);  
 
-Aulas(Cod_aula,...);
+- Asignaturas(__Cod_asig__,...);  
 
-Alumnos(DNI,...);
+- Aulas(__Cod_aula__,...);
 
-Profesores(NRP,...);
+- Alumnos(__DNI__,...);
 
-Departamentos(Cod_dep,...);
+- Profesores(__NRP__,...);
 
-```
+- Departamentos(__Cod_dep__,...);
+
+
 
 2.- Traduccion del conjunto de entidades débiles del diagrama de E/R:
 	a) Extraer las entidades débiles
