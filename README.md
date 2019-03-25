@@ -193,6 +193,88 @@ Ejemplo para muchos a muchos:
 
 ![Diagrama05](imagenes/diagrama11.png)
 
+### Traspaso de agregaciones
+
+4.- Traducción del conjunto de agregación:
+ - No se traducen a nuevas tablas
+
+### Traspaso de relaciones con Cardinalidades N-arias
+
+5.- Cardinalidad en relación Muchos a Muchos a Muchos
+ - a) Se toma la relación que une varias entidades (mas de dos entidades).
+ - b) Se anotan los atributos propios de la relación si existen.
+ - c) Se anotan las claves primarias de las entidades involucradas como claves externas.
+ - d) Se marcan como clave primaria única las claves externas del paso c
+ 
+6.- Cardinalidad en relación Muchos a Muchos a Uno
+ - a) Se toma la relación que une varias entidades (mas de dos entidades).
+ - b) Se anotan los atributos propios de la relación si existen.
+ - c) Se anotan las claves primarias de las entidades involucradas como claves externas.
+ - d) Se marcan como clave primaria única las claves externas de las relaciones con cardinalidad Muchos.
+
+7.- Cardinalidad en relación Muchos a Uno a Uno
+ - a) Se toma la relación que une varias entidades (mas de dos entidades).
+ - b) Se anotan los atributos propios de la relación si existen.
+ - c) Se anotan las claves primarias de las entidades involucradas como claves externas.
+ - d) Se marcan como clave primaria única las claves externas de las relaciones con cardinalidad Muchos.
+
+8.- Cardinalidad en relación Muchos a Uno a Uno
+ - a) Se toma la relación que une varias entidades (mas de dos entidades).
+ - b) Se anotan los atributos propios de la relación si existen.
+ - c) Se anotan las claves primarias de las entidades involucradas como claves externas.
+ - d) Se marcan como clave primaria única las claves externas de las relaciones con cardinalidad Muchos.
+ 
+8.- Cardinalidad en relación Uno a Uno a Uno
+ - a) Se toma la relación que une varias entidades (mas de dos entidades).
+ - b) Se anotan los atributos propios de la relación si existen.
+ - c) Se anotan las claves primarias de las entidades involucradas como claves externas.
+ - d) Se marcan como clave primaria cada una de las claves externas.
+ 
+
+
+## Fusión de tablas
+
+### Traspaso relaciones Muchos a Uno
+
+Para ello tenemos:
+
+![Diagrama05](imagenes/diagrama12.png)
+
+
+
+### Traspaso relaciones Muchos a Uno con atributo discriminadores
+
+Para ello tenemos:
+
+![Diagrama05](imagenes/diagrama13.png)
+
+
+### Traspaso relaciones Muchos (relación obligatoria) a Uno 
+
+Para ello tenemos:
+
+![Diagrama05](imagenes/diagrama14.png)
+
+
+### Traspaso relaciones de Herencia
+
+Para ello tenemos:
+
+![Diagrama05](imagenes/diagrama15.png)
+
+
+
+### Traspaso relaciones Uno a Uno
+
+Para ello tenemos:
+
+![Diagrama05](imagenes/diagrama16.png)
+
+
+
+
+
+
 
 
 
