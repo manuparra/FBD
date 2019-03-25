@@ -51,7 +51,7 @@ El modelado de datos, debe constar de:
 - Notación para describir reglas de integridad.
 
 
-## Proceso de anális y diseño de la Base de Datos
+## Proceso de análisis y diseño de la Base de Datos
 
 El proceso completo de implementación (desde el planteamiento del problema, la creación del modelado E/R hasta el trabajo en la Base de Datos ) de una Base de Datos sigue el siguiente esquema de operaciones:
 
@@ -105,9 +105,32 @@ El modelo jerarquico gestiona bien las relaciones uno-muchos, uno a uno, pero no
 ¿Cuáles son los problemas del modelo Jerárquico?
 
 - El almacenamiento del modelo jerárquico (árbol) es complejo.
-- El DDL es complejo.
+- El DDL (Data Definition Language) es complejo.
 - Los registros existen siempre que exista un registro "padre" en el árbol.
 - Contiene mucha redundancia, hay datos duplicados. Por lo que si modificamos un registro hay que modificarlo en todos los lugares donde aparece para que no se pierda la integridad de los datos.
+
+## Modelo en red
+
+Se fundamenta en el modelo de GRAFOS, es decir una estructura que contiene 
+nodos, enlaces (o arcos, punteros) y relaciones entre nodos o conjuntos de nodos.
+
+Algunas características:
+- Conectores de las relaciones: enlazan a los atributos propios de la relación.
+- Cada conector es una asociación diferente.
+- Cualquier registro puede relacionarse con cualquier otro.
+
+La base de datos está formada por un conjunto de GRAFOS.
+
+El ejemplo genérico podría verse como la información de Facebook, relaciona a personas y eventos, amistades, comentarios, etc.:
+
+![Link](https://2.bp.blogspot.com/-4vBwYHJIaKw/WlZC9xjVJ1I/AAAAAAAASMI/1xP4NY_7wy4lr-gbCY__6z_zB9CEuaGUACLcBGAs/s1600/antesss.png)
+
+Un ejemplo concreto sería:
+
+![Link](imagenes/diagrama17.png)
+
+En el ejemplo, cada uno de los registros está conectado con otros registros de varias formas, de modo que si queremos conocer las notas del alumno  Juan Lopez, tenemos que seguir los "punteros"" que salen del alumno hacia los demás registros:
+por ejemplo 7.5 en Sistemas Operativos.
 
 
 
