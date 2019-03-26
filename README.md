@@ -12,18 +12,29 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
 	Tabla de Contenido
 <HR>	
 
+
 - [Material de Teoría](#material-de-teor-a)
   * [Tema 3 Modelo de Datos](#tema-3-modelo-de-datos)
-  	+ [Proceso de análisis y diseño de la Base de Datos](#proceso-de-an-lis-y-dise-o-de-la-base-de-datos)
-  	+ [Transformación del modelo lógico de la base de datos](#transformaci-n-del-modelo-l-gico-de-la-base-de-datos)
-  	+ [Modelos basados en Registros](#modelos-basados-en-registros)
-  	+ [Modelo Jerárquico](#modelo-jer-rquico)
+  * [Proceso de análisis y diseño de la Base de Datos](#proceso-de-an-lisis-y-dise-o-de-la-base-de-datos)
+  * [Transformación del modelo lógico de la base de datos](#transformaci-n-del-modelo-l-gico-de-la-base-de-datos)
+  * [Modelos basados en Registros](#modelos-basados-en-registros)
+  * [Modelo Jerárquico](#modelo-jerarquico)
+  * [Modelo en red](#modelo-en-red)
 - [Prácticas](#pr-cticas)
   * [Traspaso de Modelo E/R a Tablas](#traspaso-de-modelo-e-r-a-tablas)
     + [Traspaso de Entidades Fuertes](#traspaso-de-entidades-fuertes)
     + [Traspaso de Entidades Débiles](#traspaso-de-entidades-d-biles)
     + [Traspaso de Relaciones](#traspaso-de-relaciones)
     + [Traspaso de relaciones de Herencia](#traspaso-de-relaciones-de-herencia)
+    + [Traspaso de agregaciones](#traspaso-de-agregaciones)
+    + [Traspaso de relaciones con Cardinalidades N-arias](#traspaso-de-relaciones-con-cardinalidades-n-arias)
+  * [Fusión de tablas](#fusi-n-de-tablas)
+    + [Traspaso relaciones Muchos a Uno](#traspaso-relaciones-muchos-a-uno)
+    + [Traspaso relaciones Muchos a Uno con atributo discriminadores](#traspaso-relaciones-muchos-a-uno-con-atributo-discriminadores)
+    + [Traspaso relaciones Muchos (relación obligatoria) a Uno](#traspaso-relaciones-muchos--relaci-n-obligatoria--a-uno)
+    + [Traspaso relaciones de Herencia](#traspaso-relaciones-de-herencia)
+    + [Traspaso relaciones Uno a Uno](#traspaso-relaciones-uno-a-uno)
+
 
 # Material de Teoría
 
@@ -90,7 +101,7 @@ Son tres tipos de modelos basados en una estructura de Registros:
 - Modelo Relacional.
 
 
-## Modelo Jerárquico
+## Modelo Jerarquico
 
 Fue la primera propuesta que se desarrolló. Para el nivel externo se usaba COBOL (muy utilizado en Bancos). La estructura sigue un modelo de Árbol:
 
