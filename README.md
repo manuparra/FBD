@@ -34,6 +34,7 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Traspaso relaciones Muchos (relación obligatoria) a Uno](#traspaso-relaciones-muchos--relaci-n-obligatoria--a-uno)
     + [Traspaso relaciones de Herencia](#traspaso-relaciones-de-herencia)
     + [Traspaso relaciones Uno a Uno](#traspaso-relaciones-uno-a-uno)
+    + [Traspaso relaciones Muchos a Muchos](#traspaso-relaciones-muchos-a-muchos)
 
 
 # Material de Teoría
@@ -303,6 +304,9 @@ Para ello tenemos:
 Para ello tenemos:
 
 ![Diagrama05](imagenes/diagrama16.png)
+
+
+### Traspaso relaciones Muchos a Muchos
 
 
 
