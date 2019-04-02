@@ -35,6 +35,12 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Traspaso relaciones de Herencia](#traspaso-relaciones-de-herencia)
     + [Traspaso relaciones Uno a Uno](#traspaso-relaciones-uno-a-uno)
     + [Traspaso relaciones Muchos a Muchos](#traspaso-relaciones-muchos-a-muchos)
+- [Problemas resueltos](#problemas-resueltos)
+  * [Problema A](#problema-a-modelado-e-r-gestion-bancaria)
+  
+
+
+### Problema A: Modelado E/R Sistema de gestión bancaria.
 
 
 # Material de Teoría
@@ -308,6 +314,40 @@ Para ello tenemos:
 
 ### Traspaso relaciones Muchos a Muchos
 
+
+
+## Problemas resueltos
+
+### Problema A Modelado E-R Sistema de gestión bancaria.
+
+Queremos gestionar una parte de un sistema bancario, para ello contamos con los siguientes elementos que deseamos modelar (añade los atributos que consideres necesarios):
+
+- a) El banco tiene varias sucursales identificadas por un ID de sucursal, y una dirección.
+- b) Cada sucursal tiene una cartera de clientes, caracterizados por su DNI, teléfono, email y
+dirección y estado civil.
+- c) En el banco, además trabajan empleados que a su vez también pueden ser clientes de la
+sucursal donde trabajan). Los empleados tiene un ID de empleado, un nombre, y una
+dirección.
+- d) Los empleados atienden a los clientes en las sucursales, además los empleado solo
+pueden atender a un cliente en un momento determinado (fecha de visita).
+- e) En banco posee tres productos para su clientes:
+ - i) Préstamos
+ - ii) Depósitos
+- f) Los préstamos son de dos tipos 1) Hipoteca y 2) Préstamos personal; si es un tipo de préstamo hipotecario, se identifica con un ID de préstamo, un porcentaje de interés, una cantidad de dinero hipotecado y una vivienda a la que está asociado. Para el caso de Préstamo personal, tenemos ID de préstamo, interés, cantidad de dinero prestado.
+- g) Una cuenta en una sucursal puede ser de de dos tipos Cuenta de Ahorro y Cuenta de Corriente. Las cuentas de los clientes están identificadas por un ID de cuenta o CCC y el valor del balance de la cuenta. Cada cuenta de Ahorro tiene asociado un porcentaje de interés y cada cada cuenta corriente tiene asociado un valor de descubierto.
+- h) Un cliente puede tener una única una cuenta en una sucursal.
+- i) Los clientes para ser clientes de una sucursal deben contratar al menos una cuenta.
+- j) El banco controla los préstamos y depósitos de los clientes. Para los préstamos se
+necesita guardar cada pago realizado desde una cuenta, con datos de la fecha, la cantidad pagada y un ID de transacción. Para los depósitos se necesita guardar los datos de la transacción como la cantidad depositada, el ID de transacción y la cantidad. Estos datos se controlan a modo de histórico de movimientos.
+- k) Los clientes pueden tener como máximo 5 préstamos en total, ya sean Hipotecas, o Préstamos normales.
+- l) Las cuentas puede tener hasta 3 clientes asociados a la misma cuenta.
+- m) Los préstamos y los depósitos están asociados a la cuenta de los clientes.
+- n) Una Hipoteca, tiene asociado un inmueble que puede ser una vivienda, finca rústica o local
+comercial. Los inmuebles están identificados por un ID de vivienda, metros cuadrados y dirección. Si es una vivienda hay que incluir un número de habitaciones del inmueble, y el tipo de vivienda: piso o casa.
+
+**Se pide:**
+- A) realizar el modelado de Entidad/Relación, y
+- B) realizar el paso a tablas (y fusión, siempre que sea posible).
 
 
 
