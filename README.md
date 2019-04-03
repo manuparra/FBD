@@ -151,6 +151,71 @@ En el ejemplo, cada uno de los registros está conectado con otros registros de 
 por ejemplo 7.5 en Sistemas Operativos.
 
 
+## Modelo Relacional
+
+### Claves del modelo relacional:
+
+- Atributo: Son las columnas de una tabla.
+- Dominio: El rango de valores que puede tomar un atributo. Por ejemplo si un atributo se especifica que solo puede ser entero de 0 a 100 el dominio será Entero de [0,100].
+- Relación: 
+- Tupla: Un conjunto de atributos en una relacion que forma una fila en una tabla.
+- Cardinalidad: Numero de filas.
+- Esquema de la relación: Los atributos y el Dominio.
+- Grado de la relación: Numero de atributos de la relación.
+
+### Nulos
+
+Es posible que un valor de un atributo en una fila no se conozca, en este caso se indica como NULO. El valor NULO es un valor desconocido pero que puede formar parte del Dominio de valores de un atributo.
+
+### Claves candidatas
+
+Más de un conjunto de atributos son clave primaria, si esto ocurre, entonces se llaman claves candidatas.
+
+Si hay más de una clave candidata, hay que elegir una como clave primaria de entre las que existan.
+
+### SuperClave
+
+Una superclave es un conjunto de uno o más atributos que, tomados todos, permiten identificar de forma única una entidad en el conjunto de entidades. Por ejemplo, el atributo id-cliente del conjunto de entidades cliente es suficiente para distinguir una entidad cliente de las otras.
+
+### Integridad de entidad e Integridad referencial
+
+** Integridad de entidad **
+
+No se puede tener una entidad que no esté completa en cuanto a que tenga definida toda la información referente a que atributos son clave primaria y que estos además debe ser NO NULOS.
+
+** Claves externas **
+
+Son aquellas claves que conectan una entidad con otra pero que conectan atributos que son clave primaria en la tabla maestra.
+Además la clave externa se puede ver como un conjunto de atributos de una relación cuyos valores en las tuplas deben coincidir con valores de la clave primaria de las tuplas de otra relación.
+
+
+
+** Integridad referencial **
+
+Si una relación incluye una clave externa conectada a una clave primaria, el valor de la clave externa debe ser, bien igual a un valor ya existente en el dominio activo de la clave primaria, o bien completamente nulo (si la semántica lo permite).
+
+IMPORTANTE: La integridad referencial mantiene las conexiones de las entidades.
+
+### SGBD y la integridad
+
+El SGBD mantiene la integridad de todas las relaciones:
+
+- No debe permitir insertar o actualizar valores que ya estén en las tablas para los atributos que son clave primaria o clave candidata.
+- No se pueden insertar una nueva tupla que tenga la misma clave primaria que otra que existe y además esta no puede ser nula.
+- No se puede insertar una tupla en una tabla si el valor de la clave externa no está como clave primaria en la tabla origen.
+- Igualmente ocurre con los NULOS.
+- Si se actualiza la clave primaria esta debe actualizarse en cadena en todas las tablas donde aparezca como clave candidata, pimaria o externa. Igual ocurre con el borrado.
+
+
+
+
+
+
+### Llave primaria y NULOS
+
+No puede existir atributos que sean llave primaria y sean NULOS.
+
+
 
 # Prácticas 
 
@@ -312,7 +377,138 @@ Para ello tenemos:
 ![Diagrama05](imagenes/diagrama16.png)
 
 
-### Traspaso relaciones Muchos a Muchos
+## Prácticas de SQL
+
+Esta parte contendrá diferentes materiales clave de consulta sobre ORACLE SQL del Cuaderno de prácticas:
+
+### Tipos de datos admitidos para la creación de tablas
+
+- INT, INTEGER , NUMERIC -- Enteros con signo (su rango depende del sistema).
+- REAL , FLOAT -- Datos numéricos en coma flotante.
+- CHAR(n) -- Cadena de longitud fija k.
+- VARCHAR(n) -- Cadena de longitud variable de hasta n caracteres.
+- VARCHAR2(n) -- Mínimo 1 carácter y máximo 4000.(Esta es una implementación de cadena más eficiente propia de Oracle􏰁)
+- NUMBER(p,s) -- Número con precisión p y escala s, donde precisión indica el número de dígitos, y escala el número de cifras decimales.
+- LONG -- Cadena de caracteres de longitud variable de hasta 2 gigabytes (específico de Oracle􏰁).
+- LONG RAW(size) -- Cadena de datos binarios de longitud variable de hasta 2 gigabytes (específico de Oracle􏰁).
+- DATE , TIME , TIMESTAMP -- Fechas.
+
+
+
+### Crear una tabla
+
+
+Creamos una tabla simple: 
+
+```
+CREATE TABLE tabla1 (
+  id INT,
+  nombre varchar(40)
+);
+```
+
+Creamos una tabla simple con un atributo clave primaria `id`:
+
+```
+CREATE TABLE tabla1 (
+  id INT,
+  nombre varchar(40),
+  PRIMARY KEY id
+);
+```
+
+Creamos una tabla simple con atributo no nulo:
+
+```
+CREATE TABLE tabla1 (
+  id INT,
+  nombre varchar(40) NOT NULL,
+  PRIMARY KEY id
+);
+```
+
+Creamos una tabla con un atributo que no puede tener valores repetidos `orden`:
+
+```
+CREATE TABLE tabla1 (
+  id INT,
+  nombre varchar(40) NOT NULL,
+  orden INT NOT NULL,
+  PRIMARY KEY id,
+  UNIQUE orden
+);
+```
+
+
+Creamos un par de tablas para verificar como se definen las claves externas, siguiendo el siguiente esquema:
+
+
+![Diagrama05](imagenes/diagrama17.png)
+
+
+CREATE TABLE usuarios (
+  id INT,
+  nombre varchar(40) NOT NULL,
+  PRIMARY KEY id
+);
+```
+
+y 
+
+
+CREATE TABLE pagos (
+  idPago INT,
+  idUsuario INT,
+  pago INT,
+  PRIMARY KEY (idPago),
+  FOREIGN KEY idUsuario 
+    REFERENCES usuarios(id)
+);
+```
+En la creación de tabla anterior, con respecto al esquema, hay que tener en cuenta que por un lado definimos las claves primarias y poro otro lado las claves externas marcadas del paso a tablas .
+
+
+### Descripción de tablas
+
+Para mostrar los atributos, tipos de datos de las tablas almacenadas usamos:
+
+```
+DESCRIBE usuarios;
+```
+
+Lo que mostraría el conjunto de campos que contienen la tabla usuarios.
+
+### Mostrar todas las tablas almacenadas
+
+```
+SELECT table_name FROM all_tables WHERE owner='TU USUARIO';
+```
+
+En esta consulta debes cambiar ``TU USUARIO`` por tu login a la Base de Datos de Oracle.
+
+### Eliminar una tabla
+
+```
+DROP TABLE tabla1;
+```
+
+Permite eliminar una tabla completa.
+
+### Añadir atributo nuevo a tabla
+
+Esta operación añade un nuevo campo llamado ``orden`` a la tabla1.
+
+```
+ALTER TABLE tabla 1 ADD (orden INT) ;
+```
+
+### Importar sentencias SQL desde fichero
+
+Crea un fichero de texto plano (usa un editor básico, como notepad, sublitext, textmate, ...) y añade las sentencias que quieras y guarda el fichero  con la extensión SQL. Luego desde el shell de SQLPlus, haz lo siguiente:
+
+```
+start c:\ruta\fichero.sql
+```
 
 
 
@@ -341,7 +537,7 @@ pueden atender a un cliente en un momento determinado (fecha de visita).
 necesita guardar cada pago realizado desde una cuenta, con datos de la fecha, la cantidad pagada y un ID de transacción. Para los depósitos se necesita guardar los datos de la transacción como la cantidad depositada, el ID de transacción y la cantidad. Estos datos se controlan a modo de histórico de movimientos.
 - k) Los clientes pueden tener como máximo 5 préstamos en total, ya sean Hipotecas, o Préstamos normales.
 - l) Las cuentas puede tener hasta 3 clientes asociados a la misma cuenta.
-- m) Los préstamos y los depósitos están asociados a la cuenta de los clientes.
+- m) Los préstamos y los depósitos están asociados a la cuenta de los clientes.
 - n) Una Hipoteca, tiene asociado un inmueble que puede ser una vivienda, finca rústica o local
 comercial. Los inmuebles están identificados por un ID de vivienda, metros cuadrados y dirección. Si es una vivienda hay que incluir un número de habitaciones del inmueble, y el tipo de vivienda: piso o casa.
 
