@@ -12,14 +12,21 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
 	Tabla de Contenido
 <HR>	
 
-
 - [Material de Teoría](#material-de-teor-a)
   * [Tema 3 Modelo de Datos](#tema-3-modelo-de-datos)
   * [Proceso de análisis y diseño de la Base de Datos](#proceso-de-an-lisis-y-dise-o-de-la-base-de-datos)
   * [Transformación del modelo lógico de la base de datos](#transformaci-n-del-modelo-l-gico-de-la-base-de-datos)
   * [Modelos basados en Registros](#modelos-basados-en-registros)
-  * [Modelo Jerárquico](#modelo-jerarquico)
+  * [Modelo Jerarquico](#modelo-jerarquico)
   * [Modelo en red](#modelo-en-red)
+  * [Modelo Relacional](#modelo-relacional)
+    + [Claves del modelo relacional:](#claves-del-modelo-relacional-)
+    + [Nulos](#nulos)
+    + [Claves candidatas](#claves-candidatas)
+    + [SuperClave](#superclave)
+    + [Integridad de entidad e Integridad referencial](#integridad-de-entidad-e-integridad-referencial)
+    + [SGBD y la integridad](#sgbd-y-la-integridad)
+    + [Llave primaria y NULOS](#llave-primaria-y-nulos)
 - [Prácticas](#pr-cticas)
   * [Traspaso de Modelo E/R a Tablas](#traspaso-de-modelo-e-r-a-tablas)
     + [Traspaso de Entidades Fuertes](#traspaso-de-entidades-fuertes)
@@ -34,10 +41,18 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Traspaso relaciones Muchos (relación obligatoria) a Uno](#traspaso-relaciones-muchos--relaci-n-obligatoria--a-uno)
     + [Traspaso relaciones de Herencia](#traspaso-relaciones-de-herencia)
     + [Traspaso relaciones Uno a Uno](#traspaso-relaciones-uno-a-uno)
-    + [Traspaso relaciones Muchos a Muchos](#traspaso-relaciones-muchos-a-muchos)
-- [Problemas resueltos](#problemas-resueltos)
-  * [Problema A](#problema-a-modelado-e-r-gestion-bancaria)
-  
+  * [Prácticas de SQL](#pr-cticas-de-sql)
+    + [Tipos de datos admitidos para la creación de tablas](#tipos-de-datos-admitidos-para-la-creaci-n-de-tablas)
+    + [Crear una tabla](#crear-una-tabla)
+    + [Descripción de tablas](#descripci-n-de-tablas)
+    + [Mostrar todas las tablas almacenadas](#mostrar-todas-las-tablas-almacenadas)
+    + [Eliminar una tabla](#eliminar-una-tabla)
+    + [Añadir atributo nuevo a tabla](#a-adir-atributo-nuevo-a-tabla)
+    + [Importar sentencias SQL desde fichero](#importar-sentencias-sql-desde-fichero)
+  * [Problemas resueltos](#problemas-resueltos)
+    + [Problema A Modelado E-R Sistema de gestión bancaria.](#problema-a-modelado-e-r-sistema-de-gesti-n-bancaria)
+
+
 
 
 ### Problema A: Modelado E/R Sistema de gestión bancaria.
