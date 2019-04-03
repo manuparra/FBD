@@ -562,15 +562,25 @@ comercial. Los inmuebles están identificados por un ID de vivienda, metros cua
 
 
 
+# Preguntas de tutoría Virtual resueltas
 
+## ¿Cuál es la diferencia entre esquema externo y aplicaciones de usuario?
 
+El esquema externo es el nivel más alto de abstracción, es decir el más cercano al usuario, y proporciona una visión parcial de los datos. Es la visión que tiene un usuario o aplicación de la base de datos. Cada usuario tiene una vista externa diferente de la base de datos; una aplicación de usuario sería una elemento adicional que utilizará parte de las vistas ofrecidas por el esquema externo para que desde una aplicación por ejemplo se puedan consultar, mostrar, etc datos e información de la Base de Datos, de cara a un usuario final.
 
+## Qué es el catalogo de la Base de datos o de un SGBD?
 
+El catalogo es una parte del SGBD que se encarga de aglutinar toda la información sobre el SGBD, por lo tanto el catalogo sirve como metainformación del propio SGBD. Esto quiere decir que en el catalogo, se mantiene información sobre el SGBD como tablas, usuario, tipos de datos, almacenamiento usado, etc.
 
+## ¿Qué es un esquema externo de una BD?
 
+El esquema externo es el nivel más alto de abstracción, es decir el más cercano al usuario, y proporciona una visión parcial de los datos. Es la visión que tiene un usuario o aplicación de la base de datos. Cada usuario tiene una vista externa diferente de la base de datos; Por ejemplo si en la Base de Datos mantenemos información de clientes, en el esquema externo tendríamos varias vistas para según que usuarios: los administradores, los propios clientes, el personal de marketing, etc. 
 
+### ¿Qué es un atributo compuesto multivaluado?
 
+Un atributo compuesto es aquel que se puede desglosar en otros varios, por ejemplo dirección puede desglosarse en calle, numero, portal, etc.
 
+Un atributo multivaluado es un atributo que puede tener un conjunto de valores dentro de la entidad. Por ejemplo, el atributo asociado a un alumno que sea titulos obtenidos, puede ser "Título de Grado", "Título de Master", etc. y puede tener cero, uno o varios. 
 
-
+Por tanto un atributo compuesto multivaluado será aquel atributo que puede desglosarse en otro y que además esos pueden tener un conjunto de valores en la entidad. Por ejemplo en una tabla clientes, el campo dirección se desglosa en tipo de vía, calle, etc. y un cliente puede tener varias direcciones.
 
