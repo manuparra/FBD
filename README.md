@@ -584,3 +584,27 @@ Un atributo multivaluado es un atributo que puede tener un conjunto de valores d
 
 Por tanto un atributo compuesto multivaluado será aquel atributo que puede desglosarse en otro y que además esos pueden tener un conjunto de valores en la entidad. Por ejemplo en una tabla clientes, el campo dirección se desglosa en tipo de vía, calle, etc. y un cliente puede tener varias direcciones.
 
+
+### ¿Se conservarán las tablas originales que se fusionaron?
+
+Al fusionar dos tablas, lo que hacemos es o bien crear una nueva tabla con los atributos correspondientes de la fusión de tablas o bien a una de las tablas fusionadas se le añaden los campos correspondientes según lo que corresponda en cada caso. Pero las tablas anteriores a la fusión ya no forman parte de las tablas finales si se ha decidido hacer una nueva tabla con la fusión de otras.
+
+### En el tema 1, pág. 22 del PDF, ¿qué quiere decir "criterios de uniformización"?
+
+Se refiere a los objetivos de un SGBD. Para el SGBD uno de los objetivos es hacer que todas las piezas encajen, de modo que de cara al sistema se establecen unos criterios para homogeneizar o "estandarizar" el acceso/trabajo con el mismo. 
+Ofrece por tanto capacidades para uniformizar el acceso a datos, la creación, los interfaces,la gestión, ...
+
+
+### ¿ A qué se refiere en la integridad referencial con que la semántica puede permitir que una clave externa tenga un valo nulo?
+
+Bien esto hace referencia a que en determinados casos sí es posible que una clave externa tenga valor NULO. Un ejemplo, tenemos Articulos y Proveedores, si tenemos un articulo siempre vamos a tener asociado el proveedor que vendió el articulo, en cambio si tenemos las relaciones empleado y departamento, no necesariamiente un empleado puede estar asignado a un departamento en un momento dado. Este último caso permitiría valores nulos. En la semantica de la Integridad Referencia, es el administrado el encargado de decidir que operaciones pueden hacerse y que otras operaciones no pueden hacerse/rechazar.
+
+### ¿Qué deben cubrir  una herramienta de gestión privilegios de usuarios?
+
+Debe cubrir todos los aspectos relacionados con la seguridad, tales como los accesos las tablas, los permisos concretos de actualización, insección, consulta, o borrado, entre otros.
+
+
+
+
+
+
