@@ -622,5 +622,7 @@ Si una entidad no necesita aparecer en el conjunto de relación, entonces su par
 Así, si tenemos que un PROYECTO debe tener al menos una PERSONA que trabaje en él. El PROYECTO debería aparecer, al menos, en una relación TRABAJA, y la participación de cada PROYECTO del conjunto relación TRABAJA sería obligatoria. Una PERSONA, sin embargo, no necesita trabajar en ningún PROYECTO. Asimismo, la participación de cada una de las PERSONAS en el conjunto de relación TRABAJA es opcional.
 
 Ejemplo: Empleado <Dirige> Departamento  : toda entidad de DEPARTAMENTO debe participar al menos en una (1) relación de DIRIGE (porque todo departamento debe tener un director).
+	
+(Diapositiva 21): https://www.unirioja.es/cu/arjaime/Temas/02.Modelo_E_R.pdf
 
 
