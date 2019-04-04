@@ -51,6 +51,17 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Importar sentencias SQL desde fichero](#importar-sentencias-sql-desde-fichero)
   * [Problemas resueltos](#problemas-resueltos)
     + [Problema A Modelado E-R Sistema de gestión bancaria.](#problema-a-modelado-e-r-sistema-de-gesti-n-bancaria)
+- [Preguntas de tutoria virtual resueltas](#preguntas-de-tutoria-virtual-resueltas)
+  * [¿Cuál es la diferencia entre esquema externo y aplicaciones de usuario?](#-cu-l-es-la-diferencia-entre-esquema-externo-y-aplicaciones-de-usuario-)
+  * [Qué es el catalogo de la Base de datos o de un SGBD?](#qu--es-el-catalogo-de-la-base-de-datos-o-de-un-sgbd-)
+  * [¿Qué es un esquema externo de una BD?](#-qu--es-un-esquema-externo-de-una-bd-)
+  * [¿Qué es un atributo compuesto multivaluado?](#-qu--es-un-atributo-compuesto-multivaluado-)
+  * [¿Se conservarán las tablas originales que se fusionaron?](#-se-conservar-n-las-tablas-originales-que-se-fusionaron-)
+  * [En el tema 1, pág. 22 del PDF, ¿qué quiere decir "criterios de uniformización"?](#en-el-tema-1--p-g-22-del-pdf---qu--quiere-decir--criterios-de-uniformizaci-n--)
+  * [¿ A qué se refiere en la integridad referencial con que la semántica puede permitir que una clave externa tenga un valo nulo?](#--a-qu--se-refiere-en-la-integridad-referencial-con-que-la-sem-ntica-puede-permitir-que-una-clave-externa-tenga-un-valo-nulo-)
+  * [¿Qué deben cubrir  una herramienta de gestión privilegios de usuarios?](#-qu--deben-cubrir--una-herramienta-de-gesti-n-privilegios-de-usuarios-)
+
+
 
 
 
@@ -562,7 +573,7 @@ comercial. Los inmuebles están identificados por un ID de vivienda, metros cua
 
 
 
-# Preguntas de tutoría Virtual resueltas
+# Preguntas de tutoria virtual resueltas
 
 ## ¿Cuál es la diferencia entre esquema externo y aplicaciones de usuario?
 
