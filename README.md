@@ -605,7 +605,6 @@ Al fusionar dos tablas, lo que hacemos es o bien crear una nueva tabla con los a
 Se refiere a los objetivos de un SGBD. Para el SGBD uno de los objetivos es hacer que todas las piezas encajen, de modo que de cara al sistema se establecen unos criterios para homogeneizar o "estandarizar" el acceso/trabajo con el mismo. 
 Ofrece por tanto capacidades para uniformizar el acceso a datos, la creación, los interfaces,la gestión, ...
 
-
 ### ¿ A qué se refiere en la integridad referencial con que la semántica puede permitir que una clave externa tenga un valo nulo?
 
 Bien esto hace referencia a que en determinados casos sí es posible que una clave externa tenga valor NULO. Un ejemplo, tenemos Articulos y Proveedores, si tenemos un articulo siempre vamos a tener asociado el proveedor que vendió el articulo, en cambio si tenemos las relaciones empleado y departamento, no necesariamiente un empleado puede estar asignado a un departamento en un momento dado. Este último caso permitiría valores nulos. En la semantica de la Integridad Referencia, es el administrado el encargado de decidir que operaciones pueden hacerse y que otras operaciones no pueden hacerse/rechazar.
@@ -614,8 +613,14 @@ Bien esto hace referencia a que en determinados casos sí es posible que una cla
 
 Debe cubrir todos los aspectos relacionados con la seguridad, tales como los accesos las tablas, los permisos concretos de actualización, insección, consulta, o borrado, entre otros.
 
+### ¿Que quiere decir participación obligatoria y como se deduce en un diagrama E/R?
 
 
+Es obligatoria si en la interrelación al menos una ocurrencia del tipo de entidad tiene que darse en la interrelación, en caso contrario es opcional.
+Si todas las entidades dadas deben aparecer, al menos, en una relación del conjunto de relación, entonces su participación en el conjunto de relación es obligatoria. 
+Si una entidad no necesita aparecer en el conjunto de relación, entonces su participación es opcional. 
+Así, si tenemos que un PROYECTO debe tener al menos una PERSONA que trabaje en él. El PROYECTO debería aparecer, al menos, en una relación TRABAJA, y la participación de cada PROYECTO del conjunto relación TRABAJA sería obligatoria. Una PERSONA, sin embargo, no necesita trabajar en ningún PROYECTO. Asimismo, la participación de cada una de las PERSONAS en el conjunto de relación TRABAJA es opcional.
 
+Ejemplo: Empleado <Dirige> Departamento  : toda entidad de DEPARTAMENTO debe participar al menos en una (1) relación de DIRIGE (porque todo departamento debe tener un director).
 
 
