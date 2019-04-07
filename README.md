@@ -68,6 +68,7 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Claves candidatas, superclaves, claves primarias, ...](#claves-candidatas--superclaves--claves-primarias--)
     + [Lenguajes DML, DDL, DCL,  niveles de la arquitectura y esquemas de un SGBD](#lenguajes-dml--ddl--dcl---niveles-de-la-arquitectura-y-esquemas-de-un-sgbd)
     + [Cliente/Servidor en un SGBD](#cliente-servidor-en-un-sgbd)
+    + [Entidades débiles y claves primarias](#entidades-d-biles-y-claves-primarias)
 
 
 
@@ -719,6 +720,12 @@ Se puede incidir en el nivel físico; pero a través del DDL conceptual (crean
 
 El modelo Cliente/Servidor es el modelo más usado en los SGBS, en el cual existe un servicio (servidor) funcionando de forma continua, que ofrece "servicios" a los clientes que se conectan o que solicitan algo.
 En el caso de un SGBD, sería: el cliente se conecta al SGBD para pedir por ejemplo un listado de clietes y es el servidor el que se encarga de hacer todas las gestiones para ofrecer eso al o los clientes que se conectan o solicitan información.
+
+### Entidades débiles y claves primarias
+
+Una entidad debil para el paso a tablas, incluye todos los atributos de la entidad debil, además de los atributos pertenecientes 
+a la clave primaria de la entidad fuerte de la que depende. Por lo que una entidad debil por separado tendrá una clave primaria, pero luego 
+en el paso a tablas, la Clave Primaria será compuesta por ambas, la clave primaria de la entidad fuerte y la clave primaria de la entidad debil.
 
 
 
