@@ -11,7 +11,8 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
 <HR>
 	Tabla de Contenido
 <HR>	
-
+- [Fundamentos de Bases de Datos](#fundamentos-de-bases-de-datos)
+    + [Problema A: Modelado E/R Sistema de gestión bancaria.](#problema-a--modelado-e-r-sistema-de-gesti-n-bancaria)
 - [Material de Teoría](#material-de-teor-a)
   * [Tema 3 Modelo de Datos](#tema-3-modelo-de-datos)
   * [Proceso de análisis y diseño de la Base de Datos](#proceso-de-an-lisis-y-dise-o-de-la-base-de-datos)
@@ -52,14 +53,23 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
   * [Problemas resueltos](#problemas-resueltos)
     + [Problema A Modelado E-R Sistema de gestión bancaria.](#problema-a-modelado-e-r-sistema-de-gesti-n-bancaria)
 - [Preguntas de tutoria virtual resueltas](#preguntas-de-tutoria-virtual-resueltas)
-  * [¿Cuál es la diferencia entre esquema externo y aplicaciones de usuario?](#-cu-l-es-la-diferencia-entre-esquema-externo-y-aplicaciones-de-usuario-)
-  * [Qué es el catalogo de la Base de datos o de un SGBD?](#qu--es-el-catalogo-de-la-base-de-datos-o-de-un-sgbd-)
-  * [¿Qué es un esquema externo de una BD?](#-qu--es-un-esquema-externo-de-una-bd-)
-  * [¿Qué es un atributo compuesto multivaluado?](#-qu--es-un-atributo-compuesto-multivaluado-)
-  * [¿Se conservarán las tablas originales que se fusionaron?](#-se-conservar-n-las-tablas-originales-que-se-fusionaron-)
-  * [En el tema 1, pág. 22 del PDF, ¿qué quiere decir "criterios de uniformización"?](#en-el-tema-1--p-g-22-del-pdf---qu--quiere-decir--criterios-de-uniformizaci-n--)
-  * [¿ A qué se refiere en la integridad referencial con que la semántica puede permitir que una clave externa tenga un valo nulo?](#--a-qu--se-refiere-en-la-integridad-referencial-con-que-la-sem-ntica-puede-permitir-que-una-clave-externa-tenga-un-valo-nulo-)
-  * [¿Qué deben cubrir  una herramienta de gestión privilegios de usuarios?](#-qu--deben-cubrir--una-herramienta-de-gesti-n-privilegios-de-usuarios-)
+    + [¿Cuál es la diferencia entre esquema externo y aplicaciones de usuario?](#-cu-l-es-la-diferencia-entre-esquema-externo-y-aplicaciones-de-usuario-)
+    + [Qué es el catalogo de la Base de datos o de un SGBD?](#qu--es-el-catalogo-de-la-base-de-datos-o-de-un-sgbd-)
+    + [¿Qué es un esquema externo de una BD?](#-qu--es-un-esquema-externo-de-una-bd-)
+    + [¿Qué es un atributo compuesto multivaluado?](#-qu--es-un-atributo-compuesto-multivaluado-)
+    + [¿Se conservarán las tablas originales que se fusionaron?](#-se-conservar-n-las-tablas-originales-que-se-fusionaron-)
+    + [En el tema 1, pág. 22 del PDF, ¿qué quiere decir "criterios de uniformización"?](#en-el-tema-1--p-g-22-del-pdf---qu--quiere-decir--criterios-de-uniformizaci-n--)
+    + [¿ A qué se refiere en la integridad referencial con que la semántica puede permitir que una clave externa tenga un valo nulo?](#--a-qu--se-refiere-en-la-integridad-referencial-con-que-la-sem-ntica-puede-permitir-que-una-clave-externa-tenga-un-valo-nulo-)
+    + [¿Qué deben cubrir  una herramienta de gestión privilegios de usuarios?](#-qu--deben-cubrir--una-herramienta-de-gesti-n-privilegios-de-usuarios-)
+    + [¿Que quiere decir participación obligatoria y como se deduce en un diagrama E/R?](#-que-quiere-decir-participaci-n-obligatoria-y-como-se-deduce-en-un-diagrama-e-r-)
+    + [¿Qué significa navegar a puntero o mecanismo de navegación por punteros?](#-qu--significa-navegar-a-puntero-o-mecanismo-de-navegaci-n-por-punteros-)
+    + [¿Cómo se fusionan relaciones uno a uno?](#-c-mo-se-fusionan-relaciones-uno-a-uno-)
+    + [Si una tabla solo permite una serie de valores en un atributo(su dominio). ¿Es una regla de integridad?](#si-una-tabla-solo-permite-una-serie-de-valores-en-un-atributo-su-dominio---es-una-regla-de-integridad-)
+    + [Claves candidatas, superclaves, claves primarias, ...](#claves-candidatas--superclaves--claves-primarias--)
+    + [Lenguajes DML, DDL, DCL,  niveles de la arquitectura y esquemas de un SGBD](#lenguajes-dml--ddl--dcl---niveles-de-la-arquitectura-y-esquemas-de-un-sgbd)
+    + [Cliente/Servidor en un SGBD](#cliente-servidor-en-un-sgbd)
+
+
 
 
 
@@ -402,6 +412,15 @@ Para ello tenemos:
 
 ![Diagrama05](imagenes/diagrama16.png)
 
+**Hay que tener en cuenta lo siguiente: **
+
+Se pueden combinar las tablas derivadas de los dos conjuntos de entidades en una sola o mantener tablas separadas, de la siguiente forma:
+
+- Si la relación es obligatoria en ambos sentidos (las entidades involucradas siempre aparecen conjuntamente), se pueden combinar las tablas derivadas de los dos conjuntos de entidades, manteniendo como clave primaria la clave primaria de uno de los conjuntos de entidades y como clave alternativa la clave primaria del otro conjunto de entidades.
+- En cualquier otro caso, siempre se mantendrán tablas separadas para los dos conjuntos de entidades, haciendo que la tabla de una de ellas absorba la tabla que se derivaría de la relación. Si la participación de una de las entidades es obligatoria, se suele elegir su tabla para fusionarla con
+la tabla derivada de la relación.
+
+
 
 ## Prácticas de SQL
 
@@ -575,15 +594,15 @@ comercial. Los inmuebles están identificados por un ID de vivienda, metros cua
 
 # Preguntas de tutoria virtual resueltas
 
-## ¿Cuál es la diferencia entre esquema externo y aplicaciones de usuario?
+### ¿Cuál es la diferencia entre esquema externo y aplicaciones de usuario?
 
 El esquema externo es el nivel más alto de abstracción, es decir el más cercano al usuario, y proporciona una visión parcial de los datos. Es la visión que tiene un usuario o aplicación de la base de datos. Cada usuario tiene una vista externa diferente de la base de datos; una aplicación de usuario sería una elemento adicional que utilizará parte de las vistas ofrecidas por el esquema externo para que desde una aplicación por ejemplo se puedan consultar, mostrar, etc datos e información de la Base de Datos, de cara a un usuario final.
 
-## Qué es el catalogo de la Base de datos o de un SGBD?
+### Qué es el catalogo de la Base de datos o de un SGBD?
 
 El catalogo es una parte del SGBD que se encarga de aglutinar toda la información sobre el SGBD, por lo tanto el catalogo sirve como metainformación del propio SGBD. Esto quiere decir que en el catalogo, se mantiene información sobre el SGBD como tablas, usuario, tipos de datos, almacenamiento usado, etc.
 
-## ¿Qué es un esquema externo de una BD?
+### ¿Qué es un esquema externo de una BD?
 
 El esquema externo es el nivel más alto de abstracción, es decir el más cercano al usuario, y proporciona una visión parcial de los datos. Es la visión que tiene un usuario o aplicación de la base de datos. Cada usuario tiene una vista externa diferente de la base de datos; Por ejemplo si en la Base de Datos mantenemos información de clientes, en el esquema externo tendríamos varias vistas para según que usuarios: los administradores, los propios clientes, el personal de marketing, etc. 
 
@@ -624,5 +643,83 @@ Así, si tenemos que un PROYECTO debe tener al menos una PERSONA que trabaje en 
 Ejemplo: Empleado <Dirige> Departamento  : toda entidad de DEPARTAMENTO debe participar al menos en una (1) relación de DIRIGE (porque todo departamento debe tener un director).
 	
 (Diapositiva 21): https://www.unirioja.es/cu/arjaime/Temas/02.Modelo_E_R.pdf
+
+
+### ¿Qué significa navegar a puntero o mecanismo de navegación por punteros?
+
+Bien, esto hace referencia al modo de moverse entre los datos de estructuras como árboles, grafos, listas, etc. La idea con la navegación de punteros hace referencia al modo que se tiene de moverse entre los datos, es decir, utilizando punteros; por ejemplo para moverse al siguiente datos, hay que consultar donde apunta el puntero de un registro en un grafo, lista, etc, de este modo el mecanismo nos permite movernos hacia adelante, atrás, a otro nodo, a los hijos, etc.
+
+### ¿Cómo se fusionan relaciones uno a uno?
+
+Se pueden combinar las tablas derivadas de los dos conjuntos de entidades en una sola o mantener tablas separadas, de la siguiente forma:
+- Si la relación es obligatoria en ambos sentidos (las entidades involucradas siempre aparecen conjuntamente), se pueden combinar las tablas derivadas de los dos conjuntos de entidades, manteniendo como clave primaria la clave primaria de uno de los conjuntos de entidades y como clave alternativa la clave primaria del otro conjunto de entidades.
+- En cualquier otro caso, siempre se mantendrán tablas separadas para los dos conjuntos de entidades, haciendo que la tabla de una de ellas absorba la tabla que se derivaría de la relación. Si la participación de una de las entidades es obligatoria, se suele elegir su tabla para fusionarla con
+la tabla derivada de la relación.
+
+### Si una tabla solo permite una serie de valores en un atributo(su dominio). ¿Es una regla de integridad?
+
+Una regla de integridad se define para atributos que sean clave primaria, clave candidata, clave externa, etc. Si el atributo es un atributo normal el dominio puede ser un conjunto de valores, por ejemplo, El estado civil, puede ser Casado/a, Separado/a, Divorciado/a, ... y puede o no ser clave de la tabla. Si no es atributo clave de una tabla, entonces no existe reglas de integridad sobre el. En caso contrario, sí es posible que se apliquen.
+
+### Claves candidatas, superclaves, claves primarias, ...
+
+Repasemos los conceptos:
+
+- Clave CANDIDATA: Cada una de las posibles claves de la relación. En toda relación al menos hay una clave candidata.
+- Clave PRIMARIA: Es la clave candidata elegida por el usuario para identificar de forma unívoca la tupla.
+- Clave EXTERNA: Es el atributo que contienen las claves PRIMARIAS de otra relación.
+- SuperClave: Es un conjunto de uno o más atributos que permiten especificar de forma única una ocurrencia entidad dentro de un conjunto de ellas.
+- Del conjunto de SUPERCLAVES que no pertenecen a ningún subconjunto que sea SUPERCLAVE, se llama Clave CANDIDATA.
+- De las claves CANDIDATAS selccionamos una, que será clave PRIMARIA.
+- Se escoje como clave CANDIDATA la de identifique mejor y sea más óptima.
+
+Ejemplo:
+
+*Tengo la tabla CLIENTES, donde los atributos por ejemplo: DNI y Código de Cliente son claves CANDIDATAS; hay que elegir una de ellas como clave PRIMARIA: la mejor posiblemente sea Código de Cliente en lugar de DNI.*
+
+### Lenguajes DML, DDL, DCL,  niveles de la arquitectura y esquemas de un SGBD
+
+DSL: (Data System Language) Implantado en el SGBD:
+
+- DDL: Lenguaje orientado a la DEFINICIÓN de datos.
+- DML: Lenguaje orientado a la MANIPULACIÓN de datos.
+- DCL: Lenguaje de CONTROL de datos.
+- Lenguajes anfitrión (Host Languaje): lenguaje de aplicación de alto nivel que incluye al DSL como una ampliación.
+
+Recomendaciones ASNSI/SPARC y realidad actual, sobre lenguaje y dónde están en las capas:
+
+- Deberán existir DCL, DDL y DML para cada nivel
+- En la práctica las sentencias son distinguibles a nivel de categoría pero la separación de los lenguajes conforme a los niveles de la arquitectura se establece de acuerdo con el tipo de sentencia que se puede ejecutar cada usuario según privilegios.
+- Deberá haber lenguajes anfitriones para ser usados a nivel conceptual y externo.
+
+Situación actual:
+
+- DML independiente del SGBD, aparición de estandares (SQL)
+- Usuarios no-terminales y DBAs comparten DDL y lenguajes anfitriones. No hay diferencias entre lenguaje conceptual, externo e interno.
+- Desarrollo de sistemas en conexión con BD(JDBC,Developer2000etc..)
+
+**Esquemas**
+
+- Esquema: descripción de una base de datos interpretable por el SGBD. Los esquemas deben estar almacenados en el propio SGBD.
+- Esquema externo: describe la estructura lógica de la vista de una base de datos que necesitan una o varias aplicaciones concretas. El nivel Externo nos proporciona las distintas perspectivas de una misma BD mediante los esquemas externos. Estos se crean el DDL del nivel externo. Los esquemas externos se crearan basándonos en el esquema conceptual o en otros esquemas externos.
+- Esquema conceptual: describe la estructura lógica global de la base de datos mediante un modelo abstracto de dato comprensible por el SGBD. Integra todos los esquemas externos. Debe incluir:
+  - Descripción de atributos.
+  - Descripción de entidades y conexiones.
+  - Restricciones de integridad asociadas a la semántica.
+- Esquema interno: Representación abstracta de la estructura de almacenamiento proporcionada por el SO sobre el que se ejecuta el SGBD. Describe la estructura interna, ficheros de registrosalmacenados,camposquecomponenlosregistros, formasdeacceso,etc..
+
+En cuanto a los esquemas:
+
+Se puede incidir en el nivel físico; pero a través del DDL conceptual (creando índices y clusters).
+
+- El DSL permite definir el esquema conceptual, y los esquemas externos y las correspondencias externa/conceptual y externa/externa.
+- El sistema mantiene la correspondencia conceptual/interna.
+- En algunos casos no hay visión externa si no aplicaciones orientadas al usuario.
+
+### Cliente/Servidor en un SGBD
+
+El modelo Cliente/Servidor es el modelo más usado en los SGBS, en el cual existe un servicio (servidor) funcionando de forma continua, que ofrece "servicios" a los clientes que se conectan o que solicitan algo.
+En el caso de un SGBD, sería: el cliente se conecta al SGBD para pedir por ejemplo un listado de clietes y es el servidor el que se encarga de hacer todas las gestiones para ofrecer eso al o los clientes que se conectan o solicitan información.
+
+
 
 
