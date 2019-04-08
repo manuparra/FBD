@@ -728,5 +728,18 @@ a la clave primaria de la entidad fuerte de la que depende. Por lo que una entid
 en el paso a tablas, la Clave Primaria será compuesta por ambas, la clave primaria de la entidad fuerte y la clave primaria de la entidad debil.
 
 
+### Libros y recursos recomendados para estudio
+
+Las referencias concretas están en la guía docente de la asignatura. Como material adicional he incluido algunas diapositivas en [Link Documentos](/documentos/).
+
+### Administrador de la Base de datos DBA
+
+
+La administración de bases de datos es más bien una función de nivel operativo o técnico responsable del diseño físico de la base de datos, la aplicación de medidas de seguridad y el rendimiento de la base de datos.  Las tareas incluyen el mantenimiento del diccionario de datos, la supervisión del rendimiento y la aplicación de las normas y la seguridad del SGBD. 
+
+### Esquema lógico general
+
+Es el esquema lógico que contiene un mapa de las entidades y sus atributos y las relaciones.
+
 
 
