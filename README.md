@@ -781,4 +781,20 @@ Es el esquema lógico que contiene un mapa de las entidades y sus atributos y la
 
 En la fusión de tablas cuando se crea una tabla y esta tiene campos con atributos procedentes de otras tablas, y además esos atributos que forman parte de la clave primaria, externa etc y tienene el el mismo nombre, lo que se hace es indicar a una de ellas con un nombre diferente a la otra, para distinguirlo en la tabla.
 
+### Tips de conversión lenguaje natural a E/R
+
+- Cada vuelo es llevado a cabo por un único avión. En la mayoría de las veces es una relacion de MUCHOS a UNO: E--R-->E de donde E--R es obligatoria, ya que si no hay vuelo no hay aviones.
+
+**Ejemplos de Entidades débiles:**
+![Imagen](imagenes/diagrama20.png)
+*Un prestamo está formado formado (tiene) una serie de pagos asociados. Por tanto PAGO es debil ya que depende de la existencia de PRESTAMO y también depende de la identificacion*
+
+![Imagen](imagenes/diagrama21.png)
+*En un club juegan muchos jugadores.La entidad débil JUGADORES necesita la clave primaria de la entidad superior CLUB para poder crear una clave primaria funcional.*
+
+![Imagen](imagenes/diagrama22.png)
+*Una cuenta bancaria lleva un control de las transacciones a través de un registro Bitacora.*
+
+
+
 
