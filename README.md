@@ -830,3 +830,5 @@ Es la capacidad de modificar el esquema conceptual sin tener que alterar los esq
 - 2.- Independencia Física.
 
 Es la capacidad de modificar el esquema interno sin tener que alterar el esquema conceptual (o los externos). se refiere sólo a la separación entre las aplicaciones y las estructuras físicas de almacenamiento. Por ejemplo, puede ser necesario reorganizar ciertos ficheros físicos con el fin de mejorar el rendimiento de las operaciones de consulta o de actualización de datos.
+
+
