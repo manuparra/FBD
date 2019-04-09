@@ -65,7 +65,7 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [¿Que quiere decir participación obligatoria y como se deduce en un diagrama E/R?](#-que-quiere-decir-participaci-n-obligatoria-y-como-se-deduce-en-un-diagrama-e-r-)
     + [¿Qué significa navegar a puntero o mecanismo de navegación por punteros?](#-qu--significa-navegar-a-puntero-o-mecanismo-de-navegaci-n-por-punteros-)
     + [¿Cómo se fusionan relaciones uno a uno?](#-c-mo-se-fusionan-relaciones-uno-a-uno-)
-    + [Si una tabla solo permite una serie de valores en un atributo(su dominio). ¿Es una regla de integridad?](#si-una-tabla-solo-permite-una-serie-de-valores-en-un-atributo-su-dominio---es-una-regla-de-integridad-)
+    + [Si una tabla solo permite una serie de valores en un atributo (su dominio). ¿Es una regla de integridad?](#si-una-tabla-solo-permite-una-serie-de-valores-en-un-atributo--su-dominio---es-una-regla-de-integridad-)
     + [Claves candidatas, superclaves, claves primarias, ...](#claves-candidatas--superclaves--claves-primarias--)
     + [Lenguajes DML, DDL, DCL,  niveles de la arquitectura y esquemas de un SGBD](#lenguajes-dml--ddl--dcl---niveles-de-la-arquitectura-y-esquemas-de-un-sgbd)
     + [Cliente/Servidor en un SGBD](#cliente-servidor-en-un-sgbd)
@@ -74,9 +74,10 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Administrador de la Base de datos DBA](#administrador-de-la-base-de-datos-dba)
     + [Esquema lógico general](#esquema-l-gico-general)
     + [Fusión de tablas con tabla formada por claves que apunten al mismo atributo de otras relaciones heredadas.](#fusi-n-de-tablas-con-tabla-formada-por-claves-que-apunten-al-mismo-atributo-de-otras-relaciones-heredadas)
-	
-
-
+    + [Tips de conversión lenguaje natural a E/R](#tips-de-conversi-n-lenguaje-natural-a-e-r)
+    + [Entidades débiles](#entidades-d-biles)
+    + [Relaciones IS-A](#relaciones-is-a)
+    + [Independencia física y lógica](#independencia-f-sica-y-l-gica)
 
 
 
@@ -783,17 +784,54 @@ En la fusión de tablas cuando se crea una tabla y esta tiene campos con atribut
 
 ### Tips de conversión lenguaje natural a E/R
 
-- Cada vuelo es llevado a cabo por un único avión. En la mayoría de las veces es una relacion de MUCHOS a UNO: E--R-->E de donde E--R es obligatoria, ya que si no hay vuelo no hay aviones.
-
 **Ejemplos de Entidades débiles:**
+
+Los tipos de entidad que no tienen atributos clave propios se denominan tipos de entidad d ́ebiles. En contraste, 
+los tipos de entidad regulares que tienen atributo/s clave se suelen llamar tipos de entidad fuertes. 
+Las entidades que pertenecen a un tipo de entidad débil se identifican por su relación con entidades 
+específicas de otro tipo de entidad, en combinación con algunos de los valores de sus atributos. 
+Decimos que este otro tipo de entidad es el tipo de entidad propietario o tipo de entidad padre, 
+y llamamos al tipo de relación que las une, relación identificador del tipo de entidad débil. 
+Un tipo de entidad d ́ebil siempre tiene una restricción de participación total 
+(dependencia de existencia) con respecto a su relación identificador, porque una entidad débil 
+no se puede identificar sin una entidad propietaria. in embargo no toda dependencia de existencia 
+da lugar a un tipo de entidad débil. Por ejemplo, una entidad Expediente de un alumno no puede existir 
+sin que exista una entidad Alumno, aunque puede tener un Número de expediente que lo identifique, 
+y por tanto no es una entidad débil.
+
 ![Imagen](imagenes/diagrama20.png)
+
 *Un prestamo está formado formado (tiene) una serie de pagos asociados. Por tanto PAGO es debil ya que depende de la existencia de PRESTAMO y también depende de la identificacion*
 
 ![Imagen](imagenes/diagrama21.png)
+
 *En un club juegan muchos jugadores.La entidad débil JUGADORES necesita la clave primaria de la entidad superior CLUB para poder crear una clave primaria funcional.*
 
 ![Imagen](imagenes/diagrama22.png)
+
 *Una cuenta bancaria lleva un control de las transacciones a través de un registro Bitacora.*
+
+**Participacion total y obligatoria**
+
+- Una línea doble para indicar que la participación de un conjunto de entidades en un conjunto de relaciones es total; 
+es decir, cada entidad en el conjunto de entidades aparece al menos en una relación en ese conjunto de relaciones. 
+Por ejemplo, considérese la relación prestamista entre clientes y préstamos. Una línea doble de préstamo a prestamista, 
+indica que cada préstamo debe tener al menos un cliente asociado.
+
+- En participacion no total, un valor mínimo de 1 indica una participación total del conjunto de entidades 
+en el conjunto de relaciones. Un valor máximo de 1 indica que la entidad participa de a lo sumo una relación, 
+mientras que un valor máximo de * indica que no hay límite. 
+
+- Se representa con doble línea del lado de la entidad en la que todas sus instancias deben estar asociadas con alguna instancia de la otra entidad.
+
+- Cada vuelo es llevado a cabo por un único avión. En la mayoría de las veces es una relacion de MUCHOS a UNO: E--R-->E de donde E--R es obligatoria, ya que si no hay vuelo no hay aviones.
+
+- Hay dos tipos de restricciones de participación, total y parcial, que ilustramos con un ejemplo. 
+Si la política de una empresa establece que todo empleado debe pertenecer a un departamento, un empleado 
+sólo puede existir si participa en una instancia del tipo de relación Trabaja-Para. Se dice que la participación 
+de Empleado en Trabaja-Para es una Participación Total, porque toda entidad del conjunto de entidades empleado 
+debe estar relacionada con (al menos) una entidad departamento a través de Trabaja-Para. 
+La participación total recibe a veces el nombre de dependencia de existencia.
 
 ### Entidades débiles
 
@@ -831,4 +869,4 @@ Es la capacidad de modificar el esquema conceptual sin tener que alterar los esq
 
 Es la capacidad de modificar el esquema interno sin tener que alterar el esquema conceptual (o los externos). se refiere sólo a la separación entre las aplicaciones y las estructuras físicas de almacenamiento. Por ejemplo, puede ser necesario reorganizar ciertos ficheros físicos con el fin de mejorar el rendimiento de las operaciones de consulta o de actualización de datos.
 
-
+###
