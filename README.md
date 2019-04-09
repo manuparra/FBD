@@ -535,6 +535,13 @@ Lo que mostraría el conjunto de campos que contienen la tabla usuarios.
 ```
 SELECT table_name FROM all_tables WHERE owner='TU USUARIO';
 ```
+o 
+
+
+```
+SELECT * from cat;
+```
+
 
 En esta consulta debes cambiar ``TU USUARIO`` por tu login a la Base de Datos de Oracle.
 
@@ -663,9 +670,30 @@ Se pueden combinar las tablas derivadas de los dos conjuntos de entidades en una
 - En cualquier otro caso, siempre se mantendrán tablas separadas para los dos conjuntos de entidades, haciendo que la tabla de una de ellas absorba la tabla que se derivaría de la relación. Si la participación de una de las entidades es obligatoria, se suele elegir su tabla para fusionarla con
 la tabla derivada de la relación.
 
-### Si una tabla solo permite una serie de valores en un atributo(su dominio). ¿Es una regla de integridad?
+### Si una tabla solo permite una serie de valores en un atributo (su dominio). ¿Es una regla de integridad?
 
 Una regla de integridad se define para atributos que sean clave primaria, clave candidata, clave externa, etc. Si el atributo es un atributo normal el dominio puede ser un conjunto de valores, por ejemplo, El estado civil, puede ser Casado/a, Separado/a, Divorciado/a, ... y puede o no ser clave de la tabla. Si no es atributo clave de una tabla, entonces no existe reglas de integridad sobre el. En caso contrario, sí es posible que se apliquen.
+
+Más acerca de Restricciones de Integridad:
+
+Hay 3 restricciones de integridad:
+
+- de dominio
+- de entidades
+- referencial
+
+Las restricciones de dominio son:
+
+- A cada atributo está asociado un dominio de valores posibles.
+- Los límites de dominio son la forma más elemental de restricciones de integridad.
+- Son fáciles de probar por el sistema siempre que se introducen nuevos datos a la BD.
+
+Ejemplo: En la BD de proveedores y partes:
+
+- el peso de una parte no puede ser negativo.
+- los números de una sucursal no pueden ser negativos.
+- las ciudades de sucursales deben provenir de una cierta lista
+
 
 ### Claves candidatas, superclaves, claves primarias, ...
 
