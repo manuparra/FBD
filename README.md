@@ -795,6 +795,38 @@ En la fusión de tablas cuando se crea una tabla y esta tiene campos con atribut
 ![Imagen](imagenes/diagrama22.png)
 *Una cuenta bancaria lleva un control de las transacciones a través de un registro Bitacora.*
 
+### Entidades débiles
+
+Una entidad débil es aquella cuya existencia depende de otra (considerada su entidad fuerte). Esto no aclara mucho, pero si consideramos   
+que se trata de entidades totalmente supeditadas a otras, de modo que si un ejemplar de la entidad fuerte desaparece, 
+todos los ejemplares de la entidad débil relacionados, desparacerán también del sistema.
+
+![Imagen](https://jorgesanchez.net/manuales/gbd/entidad-relacion-web-resources/image/9.png)
+
+Una tarea obligatoriamente está asignada a un trabajo, es más no tiene sentido hablar de tareas sin hablar del trabajo del que forma parte. La relación que tienen las tareas con los trabajos es de debilidad, puesto que no podemos referirnos a una tarea de forma independiente.
+
+Otro indicador de que es una entidad debil es:
+
+- Existe una dependencia de identificación ya que las tareas se identifican por un número de tarea y el número de trabajo al que se asignan. Cuando eso ocurre, es un síntoma definitivo de que se trata de una entidad débil. 
+
+![Imagen](https://jorgesanchez.net/manuales/gbd/entidad-relacion-web-resources/image/10.png)
 
 
+### Relaciones IS-A
 
+Échadle un vistazo a esta web, al apartado [1.5.2]relaciones ISA o relaciones de herencia: https://jorgesanchez.net/manuales/gbd/entidad-relacion.html
+
+### Independencia física y lógica
+
+- Independencia lógica con respecto a los datos: es la capacidad de modificar el esquema conceptual sin tener que alterar los esquemas externos, no los programas de aplicación. Podemos modificar el esquema conceptual para ampliar la base de datos o para reducir la base de datos. 
+- Independencia física con respecto a los datos: es la capacidad de modificar el esquema interno por la necesidad de reorganizar ciertos archivos físicos a fin de mejorar el rendimiento de las operaciones de obtención o actualización de datos a nivel físico. Si la base de datos aún contiene los mismos datos, no deberá ser necesario modificar el esquema conceptual.
+
+Otras definiciones:
+
+- 1.- Independencia lógica.
+
+Es la capacidad de modificar el esquema conceptual sin tener que alterar los esquemas externos ni los programas de aplicación. Se puede modificar el esquema conceptual para ampliar la base de datos o para reducirla. Por ejemplo, el añadir cuentas de mercado de valores en un sistema bancario. Son mas dificiles de lograr que las independencias fisicas, ya que los programas de aplicacion son fuertemente dependientes de la estructura  lógica de los datos a los que acceden.
+
+- 2.- Independencia Física.
+
+Es la capacidad de modificar el esquema interno sin tener que alterar el esquema conceptual (o los externos). se refiere sólo a la separación entre las aplicaciones y las estructuras físicas de almacenamiento. Por ejemplo, puede ser necesario reorganizar ciertos ficheros físicos con el fin de mejorar el rendimiento de las operaciones de consulta o de actualización de datos.
