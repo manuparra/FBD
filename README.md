@@ -73,6 +73,8 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Libros y recursos recomendados para estudio](#libros-y-recursos-recomendados-para-estudio)
     + [Administrador de la Base de datos DBA](#administrador-de-la-base-de-datos-dba)
     + [Esquema lógico general](#esquema-l-gico-general)
+    + [Fusión de tablas con tabla formada por claves que apunten al mismo atributo de otras relaciones heredadas.](#fusi-n-de-tablas-con-tabla-formada-por-claves-que-apunten-al-mismo-atributo-de-otras-relaciones-heredadas)
+	
 
 
 
@@ -745,5 +747,8 @@ La administración de bases de datos es más bien una función de nivel operativ
 
 Es el esquema lógico que contiene un mapa de las entidades y sus atributos y las relaciones.
 
+### Fusión de tablas con tabla formada por claves que apunten al mismo atributo de otras relaciones heredadas.
+
+En la fusión de tablas cuando se crea una tabla y esta tiene campos con atributos procedentes de otras tablas, y además esos atributos que forman parte de la clave primaria, externa etc y tienene el el mismo nombre, lo que se hace es indicar a una de ellas con un nombre diferente a la otra, para distinguirlo en la tabla.
 
 
