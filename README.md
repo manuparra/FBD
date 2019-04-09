@@ -738,6 +738,8 @@ en el paso a tablas, la Clave Primaria será compuesta por ambas, la clave prima
 
 Las referencias concretas están en la guía docente de la asignatura. Como material adicional he incluido algunas diapositivas en [Link Documentos](/documentos/).
 
+- Capítulo 4: https://learning.oreilly.com/library/view/learning-mysql/0596008643/ch04.html
+- Ejemplos Diagramas E/R resueltos: ver directorio Documentos/
 ### Administrador de la Base de datos DBA
 
 

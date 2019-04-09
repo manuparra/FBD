@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://www.oreilly.com/library/view/learning-mysql/0596008643/ch04s04.html -->
+<html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" data-offline-url="/" data-url="/library/view/learning-mysql/0596008643/ch04s04.html" data-archive="0596008643" data-publishers="O&#39;Reilly Media, Inc." data-htmlfile-name="ch04s04.html" data-epub-title="Learning MySQL" data-debug="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Entity Relationship Modeling Examples - Learning MySQL [Book]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./Entity Relationship Modeling Examples - Learning MySQL_files/1d5510b08c14.css" type="text/css">
+    <link href="./Entity Relationship Modeling Examples - Learning MySQL_files/css" rel="stylesheet" type="text/css">
+    
+
+    <meta property="og:title" content="Learning MySQL">
+    <meta itemprop="isPartOf" content="/library/view/learning-mysql/0596008643/">
+    <meta itemprop="name" content="Entity Relationship Modeling Examples">
+    
+    <meta property="og:url" itemprop="url" content="https://www.oreilly.com/library/view/learning-mysql/0596008643/ch04s04.html">
+    <meta property="og:site_name" content="O’Reilly | Safari">
+    <meta property="og:image" itemprop="thumbnailUrl" content="https://www.oreilly.com/library/cover/0596008643/">
+    
+    <meta property="og:image:secure_url" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/0596008643/360h/">
+    <meta property="og:description" itemprop="description" name="description" content="Entity Relationship Modeling Examples Earlier in this chapter, we showed you how to design a database and understand an Entity Relationship (ER) diagram. This section explains the requirements for our ...  - Selection from Learning MySQL [Book]">
+    
+    <meta itemprop="inLanguage" content="en">
+    
+    <meta itemprop="publisher" content="O&#39;Reilly Media, Inc.">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:book:isbn" itemprop="isbn" content="9780596008642">
+    
+    <meta property="og:book:author" itemprop="author" content="Hugh E. Williams">
+    <meta property="og:book:author" itemprop="author" content="Saied M.M. Tahaghoghi">
+    
+    <meta property="og:book:tag" itemprop="about" content="Certification">
+    <meta property="og:book:tag" itemprop="about" content="Databases">
+    
+    
+    
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@safari">
+
+
+
+
+<!-- Start Visual Website Optimizer Asynchronous Code -->
+<script id="twitter-wjs" src="./Entity Relationship Modeling Examples - Learning MySQL_files/widgets.js"></script><script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/munchkin.js"></script><script src="./Entity Relationship Modeling Examples - Learning MySQL_files/1732687426968531" async=""></script><script async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/fbevents.js"></script><script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/f.txt"></script><script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/f.txt"></script><script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/bat.js"></script><script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/f.txt"></script><script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/insight.min.js"></script><script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/f.txt"></script><script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/linkid.js"></script><script async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/gtm.js"></script><script async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/analytics.js"></script><script type="text/javascript">
+var _vwo_code=(function(){
+var account_id=291788,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script><script src="./Entity Relationship Modeling Examples - Learning MySQL_files/j.php" type="text/javascript"></script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+
+
+
+
+    <link rel="shortcut icon" href="https://www.oreilly.com/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" href="https://www.oreilly.com/library/view/static/images/apple-touch-icon.png">
+    
+
+  
+    <style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;text-align:left}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:red;font-family:serif}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1{font-size:1.5em;font-weight:bold;font-family:sans-serif,"DejaVuSans";margin-top:20px !important}#sbo-rt-content h2{font-size:1.3em;font-weight:bold;font-family:sans-serif,"DejaVuSans";color:#8e0012;margin:15px 0 8px 0 !important}#sbo-rt-content h3{font-size:1.1em;font-weight:bold;font-family:sans-serif,"DejaVuSans";margin:10px 0 8px 0 !important}#sbo-rt-content h4{font-size:bold;font-weight:1em;font-family:sans-serif,"DejaVuSans";color:#555;margin:9px 0 !important}#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;page-break-after:avoid}#sbo-rt-content div.titlepage{page-break-inside:avoid}#sbo-rt-content div.chapter>div.titlepage:first-child h1.title,#sbo-rt-content div.preface>div.titlepage:first-child h1.title,#sbo-rt-content div.appendix>div.titlepage:first-child h1.title{font-size:2em;line-height:1;margin-bottom:15px}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{margin:10px 0 !important;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #000;background-color:transparent;padding:5px !important;page-break-inside:avoid}#sbo-rt-content div.figure p.title,#sbo-rt-content div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:10px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #000;background-color:transparent;font-size:90%;padding:10px 8px !important;page-break-inside:avoid}#sbo-rt-content div.sidebar p.title{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:10px 12.5% !important;font-size:90%;padding:10px 5px !important;width:75%}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note{background-color:#f1f6fc;border:none}#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution{background-color:#fce5e8}#sbo-rt-content div.sidebar div.important{background-color:#FBEC5D}#sbo-rt-content div.sidebar div.figure{border:none}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:10px 0 10px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div.example{margin:10px 0 15px 0 !important}#sbo-rt-content div.example p.title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div.example-contents pre.programlisting,#sbo-rt-content div.example-contents pre.screen{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content div.book div.titlepage h1.title{font-size:3em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content div.book div.titlepage h2.subtitle{text-align:center;color:#000;margin:0 !important;font-style:italic;font-family:serif;font-size:1.5em}#sbo-rt-content div.book div.titlepage div.author h3{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content div.preface[title="Dedication"]>div.titlepage h1.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content div.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin-bottom:40px}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-style:italic;font-family:serif,"DejaVuSerif"}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div.footnote{font-size:90%}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content div.calloutlist dd{padding-left:40px !important}#sbo-rt-content div.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.warning,#sbo-rt-content div.caution,#sbo-rt-content div.important{margin:10px 0 !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div.note{border:1px solid #6cafd0;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div.caution{border:1px solid #8e0012;background-color:#fce5e8}#sbo-rt-content div.important{background-color:#FFF68F;border:1px solid #615E3F}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3,#sbo-rt-content div.important h3{font:bold 90%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important;color:#000}#sbo-rt-content div.table,#sbo-rt-content table{margin:10px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr{border-bottom:1px solid #c3c3c3}#sbo-rt-content tr th{border-bottom:#9d9d9d 2px solid !important;border-top:#9d9d9d 2px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content th{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td,#sbo-rt-content th{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table p.title{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:20px 0 0 0 !important;text-align:center;padding:0}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation p.title{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold}#sbo-rt-content div.index dt{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif";text-align:left}
+    </style>
+  
+
+
+
+    <style>
+    header.global {
+      top:26px;
+    }
+    .orm-topbar {
+      width: 100%;
+      height: 26px;
+      padding: 0 17px;
+      line-height: 26px;
+      background: #d3002d;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      font-size: 13px;
+    }
+    .orm-topbar svg {
+      width: 78px;
+      height: 13px;
+      fill: #fff;
+      vertical-align: middle;
+    }
+    .orm-topbar span {
+      vertical-align: middle;
+      float: right;
+      color: #fff;
+      font-weight: bold;
+    }
+    .orm-topbar:hover span {
+      text-decoration: underline;
+    }
+    </style><script src="./Entity Relationship Modeling Examples - Learning MySQL_files/MathJax.js" id=""></script>
+
+    
+<script type="text/javascript" async="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/munchkin(1).js"></script><script src="./Entity Relationship Modeling Examples - Learning MySQL_files/f(1).txt"></script><script src="./Entity Relationship Modeling Examples - Learning MySQL_files/f(2).txt"></script><script src="./Entity Relationship Modeling Examples - Learning MySQL_files/f(3).txt"></script><script src="./Entity Relationship Modeling Examples - Learning MySQL_files/f(4).txt"></script></head>
+<body class="js-preview-content library">
+
+
+<header class="global">
+    <a href="https://www.oreilly.com/go/oreilly" class="orm-topbar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.13 9.88"><desc>O'Reilly logo</desc><polygon points="28.09 1.96 28.09 0.42 21.68 0.42 21.68 9.64 28.09 9.64 28.09 8.11 23.22 8.11 23.22 5.8 27.86 5.8 27.86 4.27 23.22 4.27 23.22 1.96 28.09 1.96"></polygon><polygon points="32.85 9.64 32.85 0.42 34.39 0.42 34.39 8.11 38.82 8.11 38.82 9.64 32.85 9.64"></polygon><polygon points="40.07 9.64 40.07 0.42 41.61 0.42 41.61 8.11 46.04 8.11 46.04 9.64 40.07 9.64"></polygon><rect x="29.71" y="0.42" width="1.54" height="9.22"></rect><path d="M1.59,6.28a4.8,4.8,0,1,1,4.8,4.8,4.8,4.8,0,0,1-4.8-4.8M4.09,4A3.27,3.27,0,1,0,6.4,3,3.27,3.27,0,0,0,4.09,4" transform="translate(-1.59 -1.2)"></path><path d="M19.82,6.89A2.69,2.69,0,0,0,19,1.62H14.41v9.22h1.54V7h2.14l2.32,3.84H22.2ZM15.95,5.47V3.16H19a1.15,1.15,0,0,1,0,2.31h-3.1Z" transform="translate(-1.59 -1.2)"></path><path d="M13.32,2.61a1.13,1.13,0,1,1-1.13-1.13,1.13,1.13,0,0,1,1.13,1.13" transform="translate(-1.59 -1.2)"></path><polygon points="52.9 0.42 51.03 0.42 48.66 3.85 46.3 0.42 44.43 0.42 47.89 5.44 47.89 9.64 49.43 9.64 49.43 5.44 52.9 0.42"></polygon><path d="M58.31,1.2a2.41,2.41,0,1,0,2.41,2.42A2.42,2.42,0,0,0,58.31,1.2m0,4.44a2,2,0,1,1,2-2,2,2,0,0,1-2,2" transform="translate(-1.59 -1.2)"></path><path d="M59.4,3.09a0.72,0.72,0,0,0-.72-0.72H57.32V4.83h0.41v-1h0.69l0.49,1h0.46l-0.51-1a0.71,0.71,0,0,0,.54-0.69m-1.67-.31h0.95a0.31,0.31,0,0,1,.31.31,0.31,0.31,0,0,1-.31.3H57.73V2.78Z" transform="translate(-1.59 -1.2)"></path></svg></a>
+    <div class="header-top">
+        <nav class="main-nav">
+            <a href="https://www.oreilly.com/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.46 36" class="home-logo"><desc>Safari Logo</desc><path d="M27.85,7.25a1.4,1.4,0,1,1,2.75,0V15.6a1.44,1.44,0,0,1-1.4,1.71A1.49,1.49,0,0,1,28,16.64,13.56,13.56,0,0,1,27.54,14c-0.62-3.89-4.15-6.54-8.66-6.54S11,10.16,11,14c0,3,1.66,4.56,6.8,6.28l5.29,1.82c5.86,2,8.14,4.46,8.14,9,0,5.76-4.36,9.6-10.84,9.6-5,0-8.3-1.87-9.91-5.6v3.42a1.4,1.4,0,1,1-2.75,0V29.71A1.44,1.44,0,0,1,9.18,28c1,0,1.35.52,1.45,2A10.59,10.59,0,0,0,13,35.63a9.05,9.05,0,0,0,6.8,2.7c5,0,8.3-2.8,8.3-7a5.45,5.45,0,0,0-2.54-4.82,18.52,18.52,0,0,0-3.89-1.71l-4.51-1.56c-3.58-1.24-5.24-2-6.54-3a7.46,7.46,0,0,1-2.75-6c0-5.45,4.36-9.13,10.69-9.13,4.46,0,7.63,1.71,9.29,5.08V7.25Z" transform="translate(-7.78 -4.92)"></path><path d="M51.81,35.11c-1.82,4.1-4.51,5.81-9.28,5.81-5.39,0-8.71-2.75-8.71-7.31A6.88,6.88,0,0,1,38.11,27c1.87-.83,4.62-1.19,8.92-1.19,0.93,0,2,0,2.8.05a7,7,0,0,0,.93.05,0.89,0.89,0,0,0,1-.88V24.84c0-3.37-.31-4.46-1.71-5.71-1.19-1.09-2.8-1.56-5.24-1.56-4.15,0-6.64,1.71-7.11,4.88a1.45,1.45,0,0,1-2.9-.16c0-2.13,1.82-4.67,4.15-5.81a13.94,13.94,0,0,1,6-1.09c3.63,0,6.22.88,7.83,2.75,1.4,1.56,1.82,3.16,1.82,6.64V37a0.89,0.89,0,0,0,1,1h1.76a1.08,1.08,0,1,1,0,2.13H53.05a1.06,1.06,0,0,1-1.24-1.24V35.11Zm-15-1.61c0,3.32,2.33,5.24,6.33,5.24,3.27,0,5.76-1.24,7.16-3.58a16.08,16.08,0,0,0,1.45-6.38A0.8,0.8,0,0,0,51.24,28a34,34,0,0,0-4.62-.21C39.93,27.79,36.76,29.66,36.76,33.5Z" transform="translate(-7.78 -4.92)"></path><path d="M67.91,37a0.89,0.89,0,0,0,1,1H71.8a1.08,1.08,0,1,1,0,2.13H62a1.09,1.09,0,1,1,0-2.13h2.07a0.89,0.89,0,0,0,1-1V19.29a0.89,0.89,0,0,0-1-1H61.63a1.08,1.08,0,1,1,0-2.13h2.44a0.89,0.89,0,0,0,1-1V13.48c0-3.16.78-5.39,2.39-6.8a8.56,8.56,0,0,1,5.19-1.76,10.85,10.85,0,0,1,3.58.62,1.83,1.83,0,0,1,.52,1,1.23,1.23,0,0,1-.88,1,2.74,2.74,0,0,1-.67-0.1,12.61,12.61,0,0,0-2.28-.31,5.41,5.41,0,0,0-4,2c-0.73,1-1,2.18-1,4.56v1.35a0.89,0.89,0,0,0,1,1h3.58a1.09,1.09,0,1,1,0,2.13H68.95a0.89,0.89,0,0,0-1,1V37Z" transform="translate(-7.78 -4.92)"></path><path d="M93.68,35.11c-1.82,4.1-4.51,5.81-9.28,5.81-5.39,0-8.71-2.75-8.71-7.31A6.88,6.88,0,0,1,80,27c1.87-.83,4.62-1.19,8.92-1.19,0.93,0,2,0,2.8.05a7,7,0,0,0,.93.05,0.89,0.89,0,0,0,1-.88V24.84c0-3.37-.31-4.46-1.71-5.71-1.19-1.09-2.8-1.56-5.24-1.56-4.15,0-6.64,1.71-7.11,4.88a1.45,1.45,0,0,1-2.9-.16c0-2.13,1.82-4.67,4.15-5.81a13.94,13.94,0,0,1,6-1.09c3.63,0,6.22.88,7.83,2.75,1.4,1.56,1.82,3.16,1.82,6.64V37a0.89,0.89,0,0,0,1,1h1.76a1.08,1.08,0,1,1,0,2.13H94.92a1.06,1.06,0,0,1-1.24-1.24V35.11Zm-15-1.61c0,3.32,2.33,5.24,6.33,5.24,3.27,0,5.76-1.24,7.16-3.58a16.07,16.07,0,0,0,1.45-6.38A0.8,0.8,0,0,0,93.11,28a34,34,0,0,0-4.62-.21C81.8,27.79,78.64,29.66,78.64,33.5Z" transform="translate(-7.78 -4.92)"></path><path d="M109.44,21.05a6.5,6.5,0,0,1,2-3.53,8.68,8.68,0,0,1,5.71-2.13c1.35,0,2.13.52,2.13,1.35a0.83,0.83,0,0,1-.78,1,3.75,3.75,0,0,1-.67-0.05,2.45,2.45,0,0,0-.78-0.1,11.52,11.52,0,0,0-3.63.88c-2.59,1.19-4,4-4,8.2V37a0.89,0.89,0,0,0,1,1h3a1.08,1.08,0,1,1,0,2.13h-10a1.09,1.09,0,1,1,0-2.13h2.13a0.89,0.89,0,0,0,1-1V19.29a0.89,0.89,0,0,0-1-1h-2.13a1.09,1.09,0,1,1,0-2.13h4.72a1.06,1.06,0,0,1,1.24,1.24v3.68Z" transform="translate(-7.78 -4.92)"></path><path d="M129.09,37a0.89,0.89,0,0,0,1,1h1.82a1.08,1.08,0,1,1,0,2.13h-8.82a1.09,1.09,0,1,1,0-2.13h2.13a0.89,0.89,0,0,0,1-1V19.29a0.89,0.89,0,0,0-1-1h-2.13a1.09,1.09,0,1,1,0-2.13h4.72a1.06,1.06,0,0,1,1.24,1.24V37ZM129.55,8.5a2.08,2.08,0,0,1-2.07,2.07,2.17,2.17,0,0,1-2.13-2.13,2.08,2.08,0,0,1,2.07-2.08A2.1,2.1,0,0,1,129.55,8.5Z" transform="translate(-7.78 -4.92)"></path></svg></a>
+        </nav>
+
+        <nav class="right-nav">
+          <ul>
+            <li class="callout mobile-link">
+              <a class="t-register t-navigation-link cta-link" data-ga-label="Nav Bar" href="https://learning.oreilly.com/register/">Start Free Trial</a>
+            </li>
+            
+  <li class="mobile-link"><a class="t-sign-in" href="https://www.safaribooksonline.com/accounts/login/?next=/library/view/learning-mysql/0596008643/ch04s04.html">Sign In</a></li>
+
+
+            <li><a class="t-navigation-link" href="https://learning.oreilly.com/pricing/">Pricing</a></li>
+            <li><a class="t-navigation-link" href="https://learning.oreilly.com/enterprise/">Enterprise</a></li>
+            <li class="search-field">
+              <form id="js-search-form" class="t-navigation-form" action="https://learning.oreilly.com/search/">
+                
+                <script type="application/ld+json">
+                {
+                  "@context": "http://schema.org",
+                  "@type": "WebSite",
+                  "url": "https://learning.oreilly.com",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://learning.oreilly.com/search/?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
+                }
+                </script>
+                <input data-search-text-focus="Search books and videos..." data-search-text-idle="Search..." id="search" type="search" name="query" placeholder="Search..." autocomplete="off" required="">
+                <input type="submit" value="search" class="search-submit" autocomplete="off">
+              <div class="autocomplete-suggestions" style="position: absolute; display: none; z-index: 9999;"></div><div class="autocomplete-suggestions" style="position: absolute; display: none; z-index: 9999;"></div></form>
+            </li>
+          </ul>
+        </nav>
+    </div>
+
+    
+    
+        <div class="sbo-menu-top">
+           
+            <section class="sbo-toc-container">
+                <a href="https://learning.oreilly.com/library/view/learning-mysql/0596008643/" class="sbo-toc-thumb">
+                    <span class="sbo-title ss-list">
+                        <h1 class="t-title">Learning MySQL by Hugh E. Williams, Saied M.M. Tahaghoghi</h1>
+                    </span>
+                </a>
+            </section>
+             
+        </div>
+    
+
+
+</header>
+
+
+<section id="trial-overlay">
+  <div class="trial-overlay-content">
+  
+    <h2 class="trial-modal-title">
+        Stay ahead with the world's most comprehensive technology and business learning platform.
+    </h2>
+
+    <h2>
+        With Safari, you learn the way you learn best. Get unlimited access to videos, live online training,
+        learning paths, books, tutorials, and more.
+    </h2>
+
+    <div class="controls">
+        <a href="https://learning.oreilly.com/register/" class="button" data-ga-label="Modal">Start Free Trial</a>
+        <p>No credit card required</p>
+    </div>
+  
+    <a class="modal-dismiss" aria-label="modal dismiss"></a>
+  </div>
+</section>
+
+<section role="document">
+	
+<section id="sbo-reader">
+    
+    
+
+<div class="sbo-reader-content sbo-sample-reader ">
+    
+    <div id="sbo-rt-content">
+    <div id="test-content-id"><div class="sect1" title="Entity Relationship Modeling Examples"><div class="titlepage"><div><div><h1 class="title"><a id="BAS-SEC-MODELING-EXAMPLES"></a>Entity Relationship Modeling Examples</h1></div></div></div><p>Earlier in this chapter, we showed you how to design a database
+        and understand an Entity Relationship (ER) diagram. This section
+        explains the requirements for our three example databases—<code class="literal">music</code>, <code class="literal">university</code>, and <code class="literal">flight</code>—and shows you their Entity
+        Relationship diagrams: </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The <code class="literal">music</code> database is
+              designed to store details of a music collection, including the
+              albums in the collection, the artists who made them, the tracks
+              on the albums, and when each track was last played.</p></li><li class="listitem"><p>The <code class="literal">university</code> database
+              captures the details of students, courses, and grades for a
+              university.</p></li><li class="listitem"><p>The <code class="literal">flight</code> database
+              stores an airline timetable of flight routes, times, and the
+              plane types.</p></li></ul></div><p> The next section explains these databases, each with
+        its ER diagram and an explanation of the motivation for its design.
+        You’ll find that understanding the ER diagrams and the explanations of
+        the database designs is sufficient to work with the material in this
+        chapter. We’ll show you how to create the <code class="literal">music</code> database on your MySQL server in <a class="xref" href="https://www.oreilly.com/library/view/learning-mysql/0596008643/ch05.html" title="Chapter 5. Basic SQL">Chapter&nbsp;5</a>.</p><div class="sect2" title="The Music Database"><div class="titlepage"><div><div><h2 class="title"><a id="BAS-SEC-MUSIC"></a>The Music Database</h2></div></div></div><p>The <code class="literal">music</code> database stores
+          details of a personal music library, and could be used to manage
+          your MP3, CD, or vinyl collection. Because this <a id="I_indexterm1_d1e9213" class="indexterm"></a>database is for a personal collection, it’s relatively
+          simple and stores only the relationships between artists, albums,
+          and tracks. It ignores the requirements of many music genres, making
+          it most useful for storing popular music and less useful for storing
+          jazz or classical music. (We discuss some shortcomings of these
+          requirements at the end of the section in <a class="xref" href="https://www.oreilly.com/library/view/learning-mysql/0596008643/ch04s04.html#BAS-SEC-MUSICNO" title="What it doesn’t do">What it doesn’t do</a>.”)</p><p>We first draw up a clear list of requirements for our
+          database: </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The collection consists of albums.</p></li><li class="listitem"><p>An album is made by exactly one artist.</p></li><li class="listitem"><p>An artist makes one or more albums.</p></li><li class="listitem"><p>An album contains one or more tracks</p></li><li class="listitem"><p>Artists, albums, and tracks each have a name.</p></li><li class="listitem"><p>Each track is on exactly one album.</p></li><li class="listitem"><p>Each track has a time length, measured in
+                seconds.</p></li><li class="listitem"><p>When a track is played, the date and time the playback
+                began (to the nearest second) should be recorded; this is used
+                for reporting when a track was last played, as well as the
+                number of times music by an artist, from an album, or a track
+                has been played.</p></li></ul></div><p> There’s no requirement to capture composers, group
+          members or sidemen, recording date or location, the source media, or
+          any other details of artists, albums, or tracks.</p><p>The ER diagram derived from our requirements is shown in <a class="xref" href="https://www.oreilly.com/library/view/learning-mysql/0596008643/ch04s04.html#BAS-FIG-MUSICER" title="Figure 4-11. The ER diagram of the music database">Figure&nbsp;4-11</a>. You’ll notice that it consists of only
+          one-to-many relationships: one artist can make many albums, one
+          album can contain many tracks, and one track can be played many
+          times. Conversely, each play is associated with one track, a track
+          is on one album, and an album is by one artist. The attributes are
+          straightforward: artists, albums, and tracks have names, as well as
+          identifiers to uniquely identify each entity. The track entity has a
+          time attribute to store the duration, and the played entity has a
+          timestamp to store when the track was played.</p><div class="figure"><a id="BAS-FIG-MUSICER"></a><div class="figure-contents"><div class="mediaobject"><a id="I_mediaobject1_d1e9254"></a><img src="./Entity Relationship Modeling Examples - Learning MySQL_files/httpatomoreillycomsourceoreillyimages234935.png" alt="The ER diagram of the music database" width="467" height="488"></div></div><p class="title">Figure&nbsp;4-11.&nbsp;The ER diagram of the music database</p></div><p>The only strong entity in the database is <code class="literal">Artist</code>, which has an <code class="literal">artist_id</code> attribute that uniquely
+          identifies it. Each <code class="literal">Album</code> entity
+          is uniquely identified by its <code class="literal">album_id</code> combined with the <code class="literal">artist_id</code> of the corresponding <code class="literal">Artist</code> entity. A <code class="literal">Track</code> entity is similarly uniquely
+          identified by its <code class="literal">track_id</code>
+          combined with the related <code class="literal">album_id</code> and <code class="literal">artist_id</code> attributes. The <code class="literal">Played</code> entity is uniquely identified by a
+          combination of its <code class="literal">played</code> time,
+          and the related <code class="literal">track_id</code>,
+          <code class="literal">album_id</code>, and <code class="literal">artist_id</code> attributes.</p><div class="sect3" title="What it doesn’t do"><div class="titlepage"><div><div><h3 class="title"><a id="BAS-SEC-MUSICNO"></a>What it doesn’t do</h3></div></div></div><p>We’ve kept the <code class="literal">music</code>
+            database simple because adding extra features doesn’t help you
+            learn anything new, it just makes the explanations longer. If you
+            wanted to use the <code class="literal">music</code>
+            database in practice, then you might consider adding the following
+            features: </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Support for compilations or various-artists albums,
+                  where each track may be by a different artist and may then
+                  have its own associated album-like details such as a
+                  recording date and time. Under this model, the album would
+                  be a strong entity, with many-to-many relationships between
+                  artists and albums.</p></li><li class="listitem"><p>Playlists, a user-controlled collection of tracks. For
+                  example, you might create a playlist of your favorite tracks
+                  from an artist.</p></li><li class="listitem"><p>Track ratings, to record your opinion on how good a
+                  track is.</p></li><li class="listitem"><p>Source details, such as when you bought an album, what
+                  media it came on, how much you paid, and so on.</p></li><li class="listitem"><p>Album details, such as when and where it was recorded,
+                  the producer and label, the band members or sidemen who
+                  played on the album, and even its artwork.</p></li><li class="listitem"><p>Smarter track management, such as modeling that allows
+                  the same track to appear on many albums.</p></li></ul></div></div></div><div class="sect2" title="The University Database"><div class="titlepage"><div><div><h2 class="title"><a id="BAS-SEC-UNI"></a>The University Database</h2></div></div></div><p>The <code class="literal">university</code> database
+          stores details about <a id="I_indexterm1_d1e9346" class="indexterm"></a>university students, courses, the semester a student
+          took a particular course (and his mark and grade if he completed
+          it), and what degree program each student is enrolled in. The
+          database is a long way from one that’d be suitable for a large
+          tertiary institution, but it does illustrate relationships that are
+          interesting to query, and it’s easy to relate to when you’re
+          learning SQL. We explain the requirements next and discuss their
+          shortcomings at the end of this section.</p><p>Consider the following requirements list: </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The university offers one or more programs.</p></li><li class="listitem"><p>A program is made up of one or more courses.</p></li><li class="listitem"><p>A student must enroll in a program.</p></li><li class="listitem"><p>A student takes the courses that are part of her
+                program.</p></li><li class="listitem"><p>A program has a name, a program identifier, the total
+                credit points required to graduate, and the year it
+                commenced.</p></li><li class="listitem"><p>A course has a name, a course identifier, a credit point
+                value, and the year it commenced.</p></li><li class="listitem"><p>Students have one or more given names, a surname, a
+                student identifier, a date of birth, and the year they first
+                enrolled. We can treat all given names as a single object—for
+                example, <span class="quote">“<span class="quote">John Paul.</span>”</span></p></li><li class="listitem"><p>When a student takes a course, the year and semester he
+                attempted it are recorded. When he finishes the course, a
+                grade (such as A or B) and a mark (such as 60 percent) are
+                recorded.</p></li><li class="listitem"><p>Each course in a program is sequenced into a year (for
+                example, year 1) and a semester (for example, semester
+                1).</p></li></ul></div><p>The ER diagram derived from our requirements is shown in <a class="xref" href="https://www.oreilly.com/library/view/learning-mysql/0596008643/ch04s04.html#BAS-FIG-UNIER" title="Figure 4-12. The ER diagram of the university database">Figure&nbsp;4-12</a>. Although it is compact, the diagram uses
+          some advanced features, including relationships that have attributes
+          and two many-to-many relationships. </p><div class="figure"><a id="BAS-FIG-UNIER"></a><div class="figure-contents"><div class="mediaobject"><a id="I_mediaobject1_d1e9392"></a><img src="./Entity Relationship Modeling Examples - Learning MySQL_files/httpatomoreillycomsourceoreillyimages234887.png" alt="The ER diagram of the university database" width="629" height="462"></div></div><p class="title">Figure&nbsp;4-12.&nbsp;The ER diagram of the university database</p></div><p>In our design: </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="literal">Student</code> is a strong
+                entity, with an identifier, <code class="literal">student_id</code>, created to be the
+                primary key used to distinguish between students (remember, we
+                could have several students with the same name).</p></li><li class="listitem"><p><code class="literal">Program</code> is a strong
+                entity, with the identifier <code class="literal">program_id</code> as the primary key used
+                to distinguish between programs.</p></li><li class="listitem"><p>Each student must be enrolled in a program, so the
+                <code class="literal">Student</code> entity participates
+                totally in the many-to-one <code class="literal">EnrollsIn</code> relationship with <code class="literal">Program</code>. A program can exist without
+                having any enrolled students, so it participates partially in
+                this relationship.</p></li><li class="listitem"><p>A <code class="literal">Course</code> has meaning
+                only in the context of a <code class="literal">Program</code>, so it’s a weak entity, with
+                <code class="literal">course_id</code> as a weak key.
+                This means that a <code class="literal">Course</code> is
+                uniquely identified using its <code class="literal">course_id</code> and the <code class="literal">program_id</code> of its owning
+                program.</p></li><li class="listitem"><p>As a weak entity, <code class="literal">Course</code> participates totally in the
+                many-to-one identifying relationship with its owning <code class="literal">Program</code>. This relationship has
+                <code class="literal">Year</code> and <code class="literal">Semester</code> attributes that identify
+                its sequence position.</p></li><li class="listitem"><p><code class="literal">Student</code> and <code class="literal">Course</code> are related through the
+                many-to-many <code class="literal">Attempts</code>
+                relationships; a course can exist without a student, and a
+                student can be enrolled without attempting any courses, so the
+                participation is not total.</p></li><li class="listitem"><p>When a student attempts a course, there are attributes
+                to capture the <code class="literal">Year</code> and
+                <code class="literal">Semester</code>, and the <code class="literal">Mark</code> and <code class="literal">Grade</code>.</p></li></ul></div><div class="sect3" title="What it doesn’t do"><div class="titlepage"><div><div><h3 class="title"><a id="BAS-SEC-UNINO"></a>What it doesn’t do</h3></div></div></div><p>Our database design is rather simple, but this is because
+            the requirements are simple. For a real university, many more
+            aspects would need to be captured by the database. For example,
+            the requirements don’t mention anything about campus, study mode,
+            course prerequisites, lecturers, timetabling details, address
+            history, financials, or assessment details. The database also
+            doesn’t allow a student to be in more than one degree program, nor
+            does it allow a course to appear as part of different
+            programs.</p></div></div><div class="sect2" title="The Flight Database"><div class="titlepage"><div><div><h2 class="title"><a id="BAS-SEC-FLIGHT"></a>The Flight Database</h2></div></div></div><p>The <code class="literal">flight</code> <a id="I_indexterm1_d1e9507" class="indexterm"></a>database stores details about an airline’s fleet,
+          flights, and seat bookings. Again, it’s a hugely simplified version
+          of what a real airline would use, but the principles are the
+          same.</p><p>Consider the following requirements list: </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The airline has one or more airplanes.</p></li><li class="listitem"><p>An airplane has a model number, a unique registration
+                number, and the capacity to take one or more
+                passengers.</p></li><li class="listitem"><p>An airplane flight has a unique flight number, a
+                departure airport, a destination airport, a departure date and
+                time, and an arrival date and time.</p></li><li class="listitem"><p>Each flight is carried out by a single airplane.</p></li><li class="listitem"><p>A passenger has given names, a surname, and a unique
+                email address.</p></li><li class="listitem"><p>A passenger can book a seat on a flight.</p></li></ul></div><p>The ER diagram derived from our requirements is shown in <a class="xref" href="https://www.oreilly.com/library/view/learning-mysql/0596008643/ch04s04.html#BAS-FIG-FLIGHT" title="Figure 4-13. The ER diagram of the flight database">Figure&nbsp;4-13</a>:</p><div class="figure"><a id="BAS-FIG-FLIGHT"></a><div class="figure-contents"><div class="mediaobject"><a id="I_mediaobject1_d1e9539"></a><img src="./Entity Relationship Modeling Examples - Learning MySQL_files/httpatomoreillycomsourceoreillyimages234923.png" alt="The ER diagram of the flight database" width="635" height="517"></div></div><p class="title">Figure&nbsp;4-13.&nbsp;The ER diagram of the flight database</p></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>An <code class="literal">Airplane</code> is uniquely
+              identified by its <code class="literal">RegistrationNumber</code>, so we use this as
+              the primary key.</p></li><li class="listitem"><p>A <code class="literal">Flight</code> is uniquely
+              identified by its <code class="literal">FlightNumber</code>, so we use the flight
+              number as the primary key. The departure and destination
+              airports are captured in the <code class="literal">From</code> and <code class="literal">To</code> attributes, and we have separate
+              attributes for the departure and arrival date and time.</p></li><li class="listitem"><p>Because no two passengers will share an email address, we
+              can use the <code class="literal">EmailAddress</code> as
+              the primary key for the <code class="literal">Passenger</code> entity.</p></li><li class="listitem"><p>An airplane can be involved in any number of flights,
+              while each flight uses exactly one airplane, so the <code class="literal">Flies</code> relationship between the
+              <code class="literal">Airplane</code> and <code class="literal">Flight</code> relationships has cardinality
+              1:N; because a flight cannot exist without an airplane, the
+              <code class="literal">Flight</code> entity participates
+              totally in this relationship.</p></li><li class="listitem"><p>A passenger can book any number of flights, while a flight
+              can be booked by any number of passengers. As discussed earlier
+              in <a class="xref" href="https://www.oreilly.com/library/view/learning-mysql/0596008643/ch04s03.html#SEC-ER-INTERMEDIATE" title="Intermediate Entities">Intermediate Entities</a>,” we could specify an
+              M:N <code class="literal">Books</code> relationship
+              between the <code class="literal">Passenger</code> and
+              <code class="literal">Flight</code> relationship, but
+              considering the issue more carefully shows that there is a
+              hidden entity here: the booking itself. We capture this by
+              creating the intermediate entity <code class="literal">Booking</code> and 1:N relationships between
+              it and the <code class="literal">Passenger</code> and
+              <code class="literal">Flight</code> entities. Identifying
+              such entities allows us to get a better picture of the
+              requirements. Note that even if we didn’t notice this hidden
+              entity, it would come out as part of the ER-to-tables mapping
+              process we’ll describe next in <a class="xref" href="https://www.oreilly.com/library/view/learning-mysql/0596008643/ch04s05.html" title="Using the Entity Relationship Model">Using the Entity Relationship Model</a>.”</p></li></ul></div><div class="sect3" title="What it doesn’t do"><div class="titlepage"><div><div><h3 class="title"><a id="BAS-SEC-FLIGHTNO"></a>What it doesn’t do</h3></div></div></div><p>Again, this is a very simple flight database. There are no
+            requirements to capture passenger details such as age, gender, or
+            frequent-flier number.</p><p>We’ve treated the capacity of the airplane as an attribute
+            of an individual airplane. If, instead, we assumed that the
+            capacity is determined by the model number, we would have created
+            a new <code class="literal">AirplaneModel</code> entity with
+            the attributes <code class="literal">ModelNumber</code> and
+            <code class="literal">Capacity</code>. The <code class="literal">Airplane</code> entity would then not have a
+            <code class="literal">Capacity</code> attribute.</p><p>We’ve mapped a different flight number to each flight
+            between two destinations. Airlines typically use a flight number
+            to identify a given flight path and schedule, and they specify the
+            date of the flight independently of the flight number. For
+            example, there is one IR655 flight on April 1, another on April 2,
+            and so on. Different airplanes can operate on the same flight
+            number over time; our model would need to be extended to support
+            this.</p><p>The system also assumes that each leg of a multihop flight
+            has a different <code class="function">FlightNumber</code>.
+            This means that a flight from Dubai to Christchurch via Singapore
+            and Melbourne would need a different <code class="literal">FlightNumber</code> for the Dubai-Singapore,
+            Singapore-Melbourne, and Melbourne-Christchurch legs.</p><p>Our database also has limited ability to describe airports.
+            In practice, each airport has a name, such as <span class="quote">“<span class="quote">Melbourne
+            Regional Airport,</span>”</span> <span class="quote">“<span class="quote">Mehrabad,</span>”</span> or
+            <span class="quote">“<span class="quote">Tullamarine.</span>”</span> The name can be used to differentiate
+            between airports, but most passengers will just use the name of
+            the town or city. This can lead to confusion, when, for example, a
+            passenger could book a flight to Melbourne, Florida, USA, instead
+            of Melbourne, Victoria, Australia. To avoid such problems, the
+            International Air Transport Association (IATA) assigns a unique
+            airport code to each airport; the airport code for Melbourne,
+            Florida, USA is MLB, while the code for Melbourne, Victoria,
+            Australia is MEL. If we were to model the airport as a separate
+            entity, we could use the IATA-assigned airport code as the primary
+            key. Incidentally, there’s an alternative set of airport codes
+            assigned by the International Civil Aviation Organization (ICAO);
+            under this code, Melbourne, Florida is KMLB, and Melbourne,
+            Australia is YMML.</p></div></div></div></div>
+    </div>
+    
+    <section class="t-bottom-cta bottom-cta bottom-cta-book free-chapter">
+    
+        <h2>
+            With Safari, you learn the way you learn best. Get unlimited access to videos, live online training,
+            learning paths, books, interactive tutorials, and more.
+        </h2>
+
+        <div class="controls">
+            <a href="https://learning.oreilly.com/register/" class="button" data-ga-label="Bottom CTA">Start Free Trial</a>
+            <p>No credit card required</p>
+        </div>
+    
+</section>
+
+</div>
+
+
+</section>
+
+
+
+</section>
+
+<footer class="anybird-footer">
+    <nav class="grid">
+        <ul class="footer-nav col">
+            <li><a href="https://learning.oreilly.com/explore/"><span>Explore</span></a></li>
+            <li><a href="https://learning.oreilly.com/our-library/"><span>Tour</span></a></li>
+            <li><a href="https://learning.oreilly.com/pricing/"><span>Pricing</span></a></li>
+            <li><a href="https://learning.oreilly.com/enterprise/"><span>Enterprise</span></a></li>
+            <li><a href="https://learning.oreilly.com/government/"><span>Government</span></a></li>
+            <li><a href="https://learning.oreilly.com/academic-public-library/"><span>Education</span></a></li>
+            <li><a href="https://learning.oreilly.com/your-experience/#queue"><span>Queue App</span></a></li>
+        </ul>
+        <ul class="footer-contact col">
+            <li><a href="https://learning.oreilly.com/learn/"><span>Learn</span></a></li>
+            <li><a href="https://learning.oreilly.com/blog/"><span>Blog</span></a></li>
+            <li><a href="https://learning.oreilly.com/contact/"><span>Contact</span></a></li>
+            <li><a href="https://learning.oreilly.com/careers/"><span>Careers</span></a></li>
+            <li><a href="https://learning.oreilly.com/press-resources/"><span>Press Resources</span></a></li>
+            <li><a href="https://www.oreilly.com/online-learning/support/"><span>Support</span></a></li>
+        </ul>
+        <ul class="footer-social col">
+            <li id="footer-twitter"><a href="https://twitter.com/safari"><span>Twitter</span></a></li>
+            <li id="footer-github"><a href="http://github.com/safarijv"><span>GitHub</span></a></li>
+            <li id="footer-facebook"><a href="http://www.facebook.com/safaribooksonline"><span>Facebook</span></a></li>
+            <li id="footer-linkedin"><a href="https://www.linkedin.com/company/safari-books-online"><span>LinkedIn</span></a></li>
+        </ul>
+        <ul class="footer-legal col">
+            <li><a href="https://learning.oreilly.com/terms/"><span>Terms of Service</span></a></li>
+            <li><a href="https://learning.oreilly.com/membership-agreement/"><span>Membership Agreement</span></a></li>
+            <li><a href="https://learning.oreilly.com/privacy/"><span>Privacy Policy</span></a></li>
+        </ul>
+    </nav>
+    <div class="footer-copyright">
+        Copyright © 2019 Safari Books Online.
+    </div>
+</footer>
+
+
+
+
+<script>
+  var g = {
+    
+    position_cache: {},
+    title: "Learning MySQL",
+    author_list: "Hugh E. Williams, Saied M.M. Tahaghoghi",
+    format: "book",
+    source: "application/epub+zip",
+    is_system_book: true,
+    is_public: true,
+    loaded_from_server: true,
+    allow_scripts: false,
+    has_mathml: false
+    
+  };
+</script>
+
+<script type="text/javascript" src="./Entity Relationship Modeling Examples - Learning MySQL_files/5c67e52cc2da.js"></script>
+
+
+<noscript> 
+  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P4V6Z"
+          height="0" width="0"
+          style="display:none;visibility:hidden">
+  </iframe>
+</noscript>
+
+
+<script async="" defer="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/pageview.js"></script>
+
+
+
+
+<!-- MARC Intercept Support -->
+<script type="text/javascript" src="./Entity Relationship Modeling Examples - Learning MySQL_files/91e23154496d.js"></script><div id="academic-modal"><!-- react-empty: 1 --></div>
+
+
+
+
+
+
+<div class="annotator-notice"></div>
+<script type="text/javascript" id="">(function(){function b(){!1===c&&(c=!0,Munchkin.init("107-FMS-070"))}var c=!1,a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//munchkin.marketo.net/munchkin.js";a.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||b()};a.onload=b;document.getElementsByTagName("head")[0].appendChild(a)})();</script><script type="text/javascript" id="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/digitalpi-utm-tracker-oreilly.com.js"></script><script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1732687426968531");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1732687426968531&amp;ev=PageView&amp;noscript=1"></noscript><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.6716743770428417"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.13382976697513382" width="0" height="0" alt="" src="./Entity Relationship Modeling Examples - Learning MySQL_files/0"></div><script src="./Entity Relationship Modeling Examples - Learning MySQL_files/saved_resource" type="text/javascript"></script><div style="display: none; visibility: hidden;"><script>(function(){if(null!==document.querySelector('iframe[title\x3d"fb:share_button Facebook Social Plugin"]')&&void 0!==document.querySelector('iframe[title\x3d"fb:share_button Facebook Social Plugin"]')){var a=!1;window.addEventListener("blur",function(){a&&dataLayer.push({event:"eventTracker",eventCat:"social",eventAct:"share",eventLbl:"facebook",eventVal:0,nonInteraction:0})});document.querySelector('iframe[title\x3d"fb:share_button Facebook Social Plugin"]').addEventListener("mouseover",function(){window.focus();
+a=!0});document.querySelector('iframe[title\x3d"fb:share_button Facebook Social Plugin"]').addEventListener("mouseout",function(){a=!1})}try{window.twttr=function(b,a,d){var c,e=b.getElementsByTagName(a)[0];if(!b.getElementById(d))return b=b.createElement(a),b.id=d,b.src="//platform.twitter.com/widgets.js",e.parentNode.insertBefore(b,e),window.twttr||(c={_e:[],ready:function(a){c._e.push(a)}})}(document,"script","twitter-wjs"),twttr.ready(function(a){a.events.bind("tweet",trackTwitter)})}catch(b){}})();
+null!==document.querySelector(".IN-widget")&&void 0!==document.querySelector(".IN-widget")&&document.querySelector(".IN-widget").addEventListener("click",function(){dataLayer.push({event:"eventTracker",eventCat:"social",eventAct:"share",eventLbl:"linkedin",eventVal:0,nonInteraction:0})});
+function trackTwitter(a){a&&(a.target&&"IFRAME"==a.target.nodeName&&(opt_target=extractParamFromUri(a.target.src,"url")),dataLayer.push({event:"eventTracker",eventCat:"social",eventAct:"share",eventLbl:"twitter",eventVal:0,nonInteraction:0}))}function extractParamFromUri(a,b){if(a){var c=new RegExp("[\\?\x26#]"+b+"\x3d([^\x26#]*)");c=c.exec(a);if(null!=c)return unescape(c[1])}};</script></div><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Entity Relationship Modeling Examples - Learning MySQL_files/widget_iframe.2e9f365dae390394eb8d923cba8c5b11.html" title="Twitter settings iframe" style="display: none;"></iframe></body></html>
