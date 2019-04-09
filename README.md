@@ -70,6 +70,9 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Lenguajes DML, DDL, DCL,  niveles de la arquitectura y esquemas de un SGBD](#lenguajes-dml--ddl--dcl---niveles-de-la-arquitectura-y-esquemas-de-un-sgbd)
     + [Cliente/Servidor en un SGBD](#cliente-servidor-en-un-sgbd)
     + [Entidades débiles y claves primarias](#entidades-d-biles-y-claves-primarias)
+    + [Libros y recursos recomendados para estudio](#libros-y-recursos-recomendados-para-estudio)
+    + [Administrador de la Base de datos DBA](#administrador-de-la-base-de-datos-dba)
+    + [Esquema lógico general](#esquema-l-gico-general)
 
 
 
