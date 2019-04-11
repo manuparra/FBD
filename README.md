@@ -869,4 +869,31 @@ Es la capacidad de modificar el esquema conceptual sin tener que alterar los esq
 
 Es la capacidad de modificar el esquema interno sin tener que alterar el esquema conceptual (o los externos). se refiere sólo a la separación entre las aplicaciones y las estructuras físicas de almacenamiento. Por ejemplo, puede ser necesario reorganizar ciertos ficheros físicos con el fin de mejorar el rendimiento de las operaciones de consulta o de actualización de datos.
 
-###
+### Modelo basado en grafos y lenguajes anfitrión
+
+
+### ¿Qué quiere decir que en el modelo relacional las representaciones de las relaciones sean simétricas así como las consultas?
+
+
+Relaciones simétricas:
+
+Entidad A Cardinalidad 1:N -- Relacion R -- Entidad B Cardinalidad N:1  (Mantienen la simetría)
+
+Entidad A Cardinalidad 1:1 -- Relacion R -- Entidad B Cardinalidad 1:1  (Mantienen la simetría)
+
+Entidad A Cardinalidad N:M -- Relacion R -- Entidad B Cardinalidad M:N  (Mantienen la simetría)
+
+
+
+### Si en el catalogo de una BD tiene información sobre el SGBD como tablas, usuario, tipos de datos... ¿debería ser accesible para los usuarios?
+
+Parte de catalogo puede estar disponible para usaurios normales que tengan permisos para consultar tablas, atributos, etc. Es el administrador de la Base de datos el que limita los permisos y el acceso de los usuarios al catálogo. 
+
+### ¿Las relaciones uno a muchos y uno a uno son mas eficientes en el modelo jerárquico o en el relacional?
+
+
+Esta estructura permite relaciones 1:N entre los datos, y es muy eficiente para describir muchas relaciones del mundo real: tablas de contenido, ordenamiento de párrafos y cualquier tipo de información anidada.
+
+
+
+
