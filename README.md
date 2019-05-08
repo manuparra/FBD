@@ -896,4 +896,252 @@ Esta estructura permite relaciones 1:N entre los datos, y es muy eficiente para 
 
 
 
+# Consultas SQL/Cálculo
 
+1. -- Mostrar los datos del alumno con dni 242856';
+
+2. -- Mostrar todos los alumnos ordenados por apellidos y nombre
+
+3. -- Alumnos menores de 25 años ordenados por edad (descendente) y por apellidos y nombre
+
+4. -- Alumnos entre 20 y 30 años procedentes de las provincias de Granada, Jaen o Almería
+   -- ordenados por apellidos y nombre.
+
+5. -- Muestra ordenados los curriculum ditintos que hay
+
+6. -- DNI nombre, apellidos y curso académico de los alumnos mayores de 25 
+   -- matriculados de la asignatura tec1 
+   -- ordenados por curso académico y apellidos y nombre (Dos soluciones alternativas)
+
+7. -- Edad media de los alumnos por sexo (GROUP BY)
+
+8. -- Edad media de alumnos varones
+
+9. -- Encontrar los nombres de las asignaturas que se han impartido en el curso 2014-2015 junto con el número de alumnos matriculados en ellas. 
+
+10. -- Asignaturas de  más de 6 créditos y que han tenido alumnos en el curso 2014-2015
+
+11. -- Alumnos matriculados de alguna asignatura optativa ordenados por apellidos y nombre (Dos soluciones)
+
+12. -- Asignaturas que están en el último curso 
+
+13. -- Alumnos matriculados en asignaturas del último curso 
+
+14. -- DNI nombre y apellidos de alumnos matriculados de la asignatura 'mabd1'
+
+15. -- Código y nombre de asignaturas en las que no hay ningún alumno matriculado
+
+16. -- Alumnos matriculados de todas las asignaturas optativas 
+
+17. -- Asignaturas que tienen o han tenido  matriculados a todos los alumnos de Almería
+
+18. -- Asignaturas que tienen alumnos matriculados en todos los cursos académicos (Dos alternativas de solución)
+
+
+# Soluciones SQL, Cálculo
+
+
+1. SQL y Cálculo
+
+select ape1,ape2,nombre,edad from alumnos where dni='242856';
+
+query:= { A.nombre,A.ape1,A.ape2,A.edad |  alumnos(A) and A.dni='242856'};
+
+
+2. SQL y Cálculo
+
+select *  from alumnos order by ape1,ape2,nombre;
+
+query:= { A.nombre,A.ape1,A.ape2,A.edad |  alumnos(A) };
+
+
+3. SQL y Cálculo
+
+select nombre,ape1,ape2 from alumnos 
+where edad <=25 order by edad asc, ape1,ape2,nombre;
+
+query:= { A.nombre,A.ape1,A.ape2,A.edad |  alumnos(A) and A.edad<25};
+
+4. SQL y Cálculo
+
+-- Alumnos entre 20 y 30 años procedentes de las provincias de Granada, Jaen o Almería
+-- ordenados por apellidos y nombre.
+
+select dni,nombre,ape1,ape2 from alumnos
+    where edad between 20 and 30 and   
+     provincia in  ('Jaen','Granada','Almeria') 
+     order by ape1,ape2,nombre;
+
+
+query:= { A.nombre,A.ape1,A.ape2,A.edad |  alumnos(A) and A.edad>=20 and A.edad<=30
+and ( A.provincia='Jaen' or A.provincia='Granada' or A.provincia='Almeria')};
+
+5. SQL y Cálculo
+
+select distinct  curriculum  from asigna order by curriculum;
+
+
+6. SQL y Cálculo
+
+select curso_academico, al.dni,nombre,ape1,ape2 from alumnos al, matricula ma 
+where edad >25 and ma.codasi#='tec1' and al.dni=ma.dni 
+order by  curso_academico,ape1,ape2,nombre;
+
+select distinct curso_academico, dni,nombre,ape1,ape2 
+from alumnos  natural join matricula 
+where edad >25 and codasi#='tec1' 
+order by  curso_academico,ape1,ape2,nombre;
+
+
+query:= { M.curso_academico, A.dni,A.nombre,A.ape1,A.ape2 | 
+	alumnos(A) and matricula(M) and A.edad>25 
+and M.codasi='tec1' and M.dni=A.dni};
+
+
+7. SQL y Cálculo
+
+select sexo, avg(edad) from alumnos group by sexo order by sexo ;
+
+
+8. SQL y Cálculo
+
+select sexo, avg(edad) from alumnos  group by sexo having sexo='v' order by sexo ;
+
+select sexo, avg(edad) aedad from alumnos group by sexo having (sexo='v' or sexo='m') order by aedad  ;
+
+
+select sexo, avg(edad) from alumnos WHERE sexo='v' group by sexo  order by sexo ;
+
+9. SQL y Cálculo
+
+select nombreas,count(*) from asigna, matricula where asigna.asi#=matricula.codasi# and
+curso_academico='2014-2015' group by nombreas ORDER BY nombreas ASC;
+
+10.  SQL y Cálculo
+
+select asi# from asigna where credt+credpr >6
+    intersect
+select codasi# from matricula where curso_academico='2014-2015';
+
+query:= { A |  asigna(A) and  A.credt>5 and (exists M)(matricula(M) and M.curso_academico='2014-2015' and M.codasi=A.asi)};
+
+11. SQL y Cálculo
+
+select distinct alumnos.dni,ape1,ape2,nombre from matricula,alumnos
+where alumnos.dni=matricula.dni 
+      and codasi# in (select asi# from asigna where caracter='op') 
+order by ape1,ape2,nombre;
+
+Otra opción:
+
+select distinct dni,ape1,ape2,nombre from (matricula natural join alumnos) 
+       join (select asi# from asigna where caracter='op') on codasi#=asi#
+order by ape1,ape2,nombre;    	
+
+
+query:= { A.dni,A.ape1,A.ape2,A.nombre |  alumnos(A) and (exists As,M)(asigna(As) and matricula(M) and As.caracter='op' and  M.codasi=As.asi and M.dni=A.dni)};
+
+12. SQL y Cálculo
+
+select asi# from asigna where curso>= all(select curso from asigna);
+
+select asi# from asigna where curso= (select max(curso) from asigna);
+
+select asi# from asigna as1 where not exists (
+   select * from asigna as2 where as2.curso>as1.curso
+);
+
+
+-- Cálculo WinRDBI:
+query:= { A1.asi |  asigna(A1) and not (exists A2)(asigna(A2) and A2.curso>A1.curso)};
+
+13. SQL y Cálculo
+
+
+select distinct dni from matricula where 
+codasi# in (select asi# from asigna where curso >=all (select asi.curso from asigna asi));
+
+
+select distinct dni from asigna join matricula on (codasi#=asi#) where not exists (
+   select * from asigna as2 where as2.curso>asigna.curso
+);
+
+
+query:= { A |  alumnos(A) and  (exists As1,M )(asigna(As1) and matricula(M) and M.codasi=As1.asi and M.dni=A.dni 
+and not (exists As2)(asigna(As2) and As2.curso>As1.curso))};
+
+14. SQL y Cálculo
+
+select dni,ape1,ape2,nombre from alumnos
+   where exists (select * from matricula  where codasi#='mab1' and alumnos.dni=matricula.dni);
+   
+select distinct dni,ape1,ape2,nombre 
+from alumnos natural join (select dni from matricula where codasi#='mab1');
+
+
+query:= { A.nombre,A.ape1,A.ape2 |  alumnos(A) and  (exists M )(matricula(M) and M.codasi='mab1' and M.dni=A.dni)};
+
+15. SQL y Cálculo
+
+select asi#,nombreas from asigna where not exists (select * from matricula where asi#=codasi#);
+
+
+select asi#,nombreas from asigna --asinaturas
+  minus -- menos en las que hay matrículas
+select asi#,nombreas from asigna join matricula on (codasi#=asi#);
+
+
+select asi#,nombreas from asigna
+  minus
+select asi#,nombreas from asigna,matricula where asi#=codasi#;
+
+query:= { A.asi,A.nombreas |  asigna(A) and not (exists M)(matricula(M) and M.codasi=A.asi)};
+
+16. SQL y Cálculo
+
+Select ape1,ape2,nombre from alumnos a where
+not exists (
+    select asi# from asigna where caracter='op'
+       minus
+    select m.codasi# from matricula m where m.dni=a.dni
+);
+
+
+Select ape1,ape2,nombre from alumnos where
+not exists (select asi# from asigna where caracter='op'
+    and not exists(select * from matricula where matricula.dni=alumnos.dni and codasi#=asi#));
+	
+	
+query:= { A | alumnos(A) and not (exists As) (asigna(As) and As.caracter='op' and not  (exists M)( matricula(M) and  M.codasi=As.asi and M.dni=A.dni))};
+
+
+
+17. SQL y Cálculo
+
+Select asi#,nombreas from asigna a where 
+   not exists(select dni from alumnos  where provincia='Almeria'
+               minus
+              select m.dni from matricula m where m.codasi#=a.asi#);
+
+
+Select asi#,nombreas from asigna a where 
+   not exists(select * from alumnos al where al.provincia='Almeria' and 
+       not exists (select * from matricula m where m.codasi#=a.asi# and m.dni=al.dni));
+	   
+
+query:= { As | asigna(As) and not (exists A) (alumnos(A) and A.provincia='Almeria' and not  (exists M)( matricula(M) and  M.codasi=As.asi and M.dni=A.dni))};
+
+
+18. SQL y Cálculo
+
+Select asi#,nombreas from asigna a where not exists
+      (select * from matricula m1 where 
+          not exists (select * from matricula m2 where a.asi#=m2.codasi# and m1.curso_academico=m2.curso_academico));
+          
+Select asi#,nombreas from asigna a where not exists
+      (select m1.curso_academico from matricula m1 
+        minus
+       select m2.curso_academico from matricula m2 where a.asi#=m2.codasi#);
+
+       
+query:= { As | asigna(As) and not  (exists M1)( matricula(M1) and not (exists M2) ( matricula(M2) and M1.curso_academico=M2.curso_academico and M2.codasi=As.asi))};
