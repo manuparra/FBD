@@ -79,6 +79,12 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
     + [Relaciones IS-A](#relaciones-is-a)
     + [Independencia física y lógica](#independencia-f-sica-y-l-gica)
 
+  * [Preguntas resueltas de tutoría 2a parte](#preguntas-resueltas-de-tutor-a-2a-parte)
+      - [Si tenemos dos campos indizados mediante indices bitmaps, ¿podemos resolver consultas basadas en AND?](#si-tenemos-dos-campos-indizados-mediante-indices-bitmaps---podemos-resolver-consultas-basadas-en-and-)
+      - [En el hashing extendido se producen desbordamientos?](#en-el-hashing-extendido-se-producen-desbordamientos-)
+      - [La clave de una tabla organizada por índices puede estar definida sobre cualquiera de sus campos?](#la-clave-de-una-tabla-organizada-por--ndices-puede-estar-definida-sobre-cualquiera-de-sus-campos-)
+      - [¿El hashing dinámico necesita una estimación del número de datos a insertar para cada tabla hash?](#-el-hashing-din-mico-necesita-una-estimaci-n-del-n-mero-de-datos-a-insertar-para-cada-tabla-hash-)
+      - [Un factor de bloqueo mayor a 1 implica tener más de un registro por página ( explicación del factor de bloqueo?)](#un-factor-de-bloqueo-mayor-a-1-implica-tener-m-s-de-un-registro-por-p-gina---explicaci-n-del-factor-de-bloqueo--)
 
 
 
@@ -1027,6 +1033,9 @@ query:= { A |  asigna(A) and  A.credt>5 and (exists M)(matricula(M) and M.curso_
 
 11. SQL y Cálculo
 
+
+Alumnos matriculados de alguna asignatura optativa ordenados por apellidos y nombre (Dos soluciones)
+
 select distinct alumnos.dni,ape1,ape2,nombre from matricula,alumnos
 where alumnos.dni=matricula.dni 
       and codasi# in (select asi# from asigna where caracter='op') 
@@ -1145,3 +1154,39 @@ Select asi#,nombreas from asigna a where not exists
 
        
 query:= { As | asigna(As) and not  (exists M1)( matricula(M1) and not (exists M2) ( matricula(M2) and M1.curso_academico=M2.curso_academico and M2.codasi=As.asi))};
+
+
+
+
+## Preguntas resueltas de tutoría 2a parte
+
+#### Si tenemos dos campos indizados mediante indices bitmaps, ¿podemos resolver consultas basadas en AND?
+
+Sí, se pueden resolver AND. La justificación puedes verla aquí: https://www.geeksforgeeks.org/dbms-bitmap-indexing/
+
+
+#### En el hashing extendido se producen desbordamientos?
+
+El hasing extensible resuelve el desbordamiento del cubo dividiendo el cubo en dos y, si es necesario, aumentando el tamaño del directorio.
+
+####  La clave de una tabla organizada por índices puede estar definida sobre cualquiera de sus campos?
+
+
+Los índices ocupan espacio en la memoria (RAM); demasiados o demasiado grandes de índices y la base de datos va a tener que intercambiarlos hacia y desde el disco. También aumentan el tiempo de inserción y de borrado (cada índice debe actualizarse para cada dato insertado/borrado/actualizado).
+No tienes memoria infinita. Haciendo que todos los índices encajen en RAM = bueno. No tienes tiempo infinito. La indexación de sólo las columnas que necesita indexar minimiza el impacto en el rendimiento de inserción/eliminación/actualización.
+
+#### ¿El hashing dinámico necesita una estimación del número de datos a insertar para cada tabla hash?
+
+https://decsai.ugr.es/~jfv/ed1/tedi/cdrom/docs/tablash.html
+
+En comparación con otras técnicas de búsqueda, el hashing tiene ventajas y desventajas. En general, para valores grandes de n (y razonables valores de Ó) un buen esquema de hashing requiere normalmente menos pruebas (del orden 1.5 - 2) que cualquier otro método de búsqueda, incluyendo la búsqueda en árboles binarios. Por otra parte, en el caso peor, puede comportarse muy mal al requerir O(n) pruebas. También puede considerarse como una ventaja el hecho de que debemos tener alguna estimación a priori de número máximo de items que vamos a colocar en la tabla aunque si no disponemos de tal estimación siempre nos quedaría la opción de usar el metodo de encadenamiento separado en donde el desbordamiento de la tabla no constituye ningún problema.
+
+
+#### Un factor de bloqueo mayor a 1 implica tener más de un registro por página ( explicación del factor de bloqueo?)
+
+Factor de bloqueo: El número de registros en un bloque. Nota: El factor de bloqueo se calcula dividiendo la longitud del bloque por la longitud de cada registro contenido en el bloque. Si los registros no tienen la misma longitud, se puede utilizar la longitud media del registro para calcular el factor de bloqueo. https://www.statisticshowto.datasciencecentral.com/blocking-factor/
+
+
+
+
+
