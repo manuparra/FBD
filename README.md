@@ -85,8 +85,7 @@ Profesor Grupo A-A1: Manuel Parra-Royón  (manuelparra@cern.ch | manuelparra@ugr
       - [La clave de una tabla organizada por índices puede estar definida sobre cualquiera de sus campos?](#la-clave-de-una-tabla-organizada-por--ndices-puede-estar-definida-sobre-cualquiera-de-sus-campos-)
       - [¿El hashing dinámico necesita una estimación del número de datos a insertar para cada tabla hash?](#-el-hashing-din-mico-necesita-una-estimaci-n-del-n-mero-de-datos-a-insertar-para-cada-tabla-hash-)
       - [Un factor de bloqueo mayor a 1 implica tener más de un registro por página ( explicación del factor de bloqueo?)](#un-factor-de-bloqueo-mayor-a-1-implica-tener-m-s-de-un-registro-por-p-gina---explicaci-n-del-factor-de-bloqueo--)
-
-
+	  - [Como hacer la division SQL, etc.](#como-hacer-la-division-sql--etc-)
 
 
 
@@ -1188,5 +1187,15 @@ Factor de bloqueo: El número de registros en un bloque. Nota: El factor de bloq
 
 
 
+#### Como hacer la division SQL, etc.
 
+Recomiento ver estos recursos:
+
+Ejemplo explicado 1: https://www.inf.usi.ch/faculty/soule/teaching/2016-fall/db/division.pdf
+
+Ejemplo explicado 2: http://users.abo.fi/soini/divisionEnglish.pdf
+
+y este de como se hace paso a paso:
+
+https://www.geeksforgeeks.org/sql-division/
 
